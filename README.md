@@ -1,6 +1,6 @@
 # Bracketeering
 
-[2021 Rules](2021/rules)
+[2021 Rules](2021/doc/rules.md)
 
 <!--
 
