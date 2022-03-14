@@ -82,6 +82,9 @@ def loadGames(teams):
         else:
             games[gid].team2 = team
 
+        # (For convenience computing team depth in a given bracket)
+        team.first_game = games[gid]
+
     # TODO : My tentative hope is that I can read this file every day to update the full database.
     #        (Or if I am lucky, every few minutes, if 538 updates it that frequently (and doesn't lock me out))
     #
@@ -112,6 +115,7 @@ def generateBracket(games_src, sorted_gids, winner_f):
         winner = game.team2
         if team1_wins:
             winner = game.team1
+
         # Add the slot to the bracket
         bracket.slots.appendLeft(Slot(bracket, winner, game))
 
@@ -140,5 +144,9 @@ sorted_gids = sorted(games.keys(), reverse=True)
 bracket = Bracket()
 bracket.readFromFile(teams_lookup, games, "2022/data/brackets/chalk.txt")
 
+print("Gonzaga depth: ", bracket.teamDepth(teams_lookup["Gonzaga"]))
+print("Purdue depth: ", bracket.teamDepth(teams_lookup["Purdue"]))
+print("VT depth: ", bracket.teamDepth(teams_lookup["Virginia Tech"]))
+
 # DEBUG : print
-print(bracket)
+#print(bracket)

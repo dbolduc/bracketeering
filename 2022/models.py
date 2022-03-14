@@ -14,6 +14,9 @@ class Team(object):
         self.play_in = None
         self.forecast = None
 
+        # The following fields are filled in by loadGames()
+        self.first_game = None
+
     def __str__(self):
         return "%s %s" % (self.seed, self.name)
 
@@ -53,11 +56,30 @@ class Bracket(object):
             if i == 0:
                 self.bid = int(line)
                 continue
-            [gid, name] = line.split(',')
-            self.slots.append(Slot(self, teams_lookup[name], games[int(gid)]))
+            [gid, team_name] = line.split(',')
+            self.slots.append(Slot(self, teams_lookup[team_name], games[int(gid)]))
+
+    # TODO : I am not sure this should be a member function
+    def teamDepth(self, team: Team):
+        # Skip this case where game id != slot index.
+        # The only teams I care about are VT and Purdue.
+        if team.play_in:
+            return "Who cares?"
+
+        round = 0
+        gid = team.first_game.gid
+        slot = self.slots[gid - 1] # gid is 1-indexed; self.slots is 0-indexed.
+        while slot.winner == team:
+            round += 1
+            gid //= 2
+            if gid < 0:
+                break
+            slot = self.slots[gid - 1]
+        
+        return ["Round of 64", "Round of 32", "Sweet 16", "Elite 8", "Final 4", "Championship", "Winner"][round]
 
     # TODO : consolidate cheat sheet information
-    def cheat_sheet():
+    def cheat_sheet(self):
         pass
 
 class Slot(object):
