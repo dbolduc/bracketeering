@@ -8,6 +8,7 @@ import math
 import random
 from collections import deque
 import itertools
+import copy
 
 # ======== Initialization Methods ============
 
@@ -102,6 +103,12 @@ def loadGames(teams):
 
     return games
 
+# Returns an ordered list of Game IDs that represent the streak order
+def loadStreak():
+    path = '2022/data/streak.txt'
+    lines = open(path).read().split('\n')
+    return [int(gid) for gid in lines if not gid.startswith("#")]
+
 def chalkCompare(game: Game) -> bool:
     return game.team1.overall_seed < game.team2.overall_seed
 
@@ -125,7 +132,7 @@ def generateBracket(games_src, sorted_gids, winner_f, bid: int = 0):
     # Let's reverse the list so that we are counting down to the championship game.
     # Let's also make a copy because we will be writing values to `Game` objects,
     # and we do not want the original to be affected.
-    games = games_src.copy()
+    games = copy.deepcopy(games_src)
     for gid in sorted_gids:
         game = games[gid]
         team1_wins = winner_f(game)
@@ -149,12 +156,13 @@ def generateBracket(games_src, sorted_gids, winner_f, bid: int = 0):
     return bracket
 
 # Generate a cheat sheet with relevant information to make drafting easier.
-def writeCheatSheet(brackets):
+def writeCheatSheet(brackets, streak_gids):
     path = "2022/data/cheat_sheet.txt"
     with open(path, "w+") as file:
         for bracket in brackets:
             str_chalk = str(round(bracket.calcChalkScore(chalk), 2))
             str_538 = str(round(bracket.calc538Score(), 2))
+            str_heat = str(round(bracket.calcHeatScore(streak_gids), 4))
 
             # Extract the winners from the Elite Eight and on...
             #
@@ -180,16 +188,18 @@ def writeCheatSheet(brackets):
             file.write("VT Depth:     %s\n" % bracket.teamDepth(teams_lookup["Virginia Tech"]))
             file.write("Chalk Score:  %s\n" % str_chalk)
             file.write("538 Score:    %s\n" % str_538)
+            file.write("HEAT Score:    %s\n" % str_heat)
             file.write("\n")
 
 # Write in a different format that allows for sorting
-def writeSortableCheatSheet(brackets):
+def writeSortableCheatSheet(brackets, streak_gids):
     path = "2022/data/sortable_cheat_sheet.csv"
     with open(path, "w+") as file:
         file.write("ID,Chalk Score,538 Score,Winner,Runner Up,Purdue Depth,VT Depth,UCLA Depth\n")
         for bracket in brackets:
             str_chalk = str(round(bracket.calcChalkScore(chalk), 2))
             str_538 = str(round(bracket.calc538Score(), 2))
+            str_heat = str(round(bracket.calcHeatScore(streak_gids), 4))
             purdue = bracket.teamDepth(teams_lookup["Purdue"], True)
             vt = bracket.teamDepth(teams_lookup["Virginia Tech"], True)
             ucla = bracket.teamDepth(teams_lookup["UCLA"], True)
@@ -206,7 +216,7 @@ def writeSortableCheatSheet(brackets):
                 ordered.append(str(slot.winner))
 
             # Write the information to the file
-            file.write("%s,%s,%s,%s,%s,%s,%s,%s\n" % (str(bracket.bid), str_chalk, str_538, ordered[0], ordered[1], purdue, vt, ucla))
+            file.write("%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (str(bracket.bid), str_chalk, str_538, str_heat, ordered[0], ordered[1], purdue, vt, ucla))
 
 
 # ======== Main Execution ============
@@ -215,6 +225,7 @@ teams, teams_lookup = loadTeams()
 load538Forecast(teams_lookup)
 games = loadGames(teams)
 sorted_gids = sorted(games.keys(), reverse=True)
+streak_gids = loadStreak()
 chalk = generateBracket(games, sorted_gids, chalkCompare)
 anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
 #absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
@@ -224,6 +235,7 @@ anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
 # TODO : Consider unfactoring the generation into a dedicated method (for cleanliness)
 brackets = []
 kGenerateBrackets = False
+kGenerateCheatSheets = False
 kBracketsPerOwner = 4
 kNumOwners = 8
 kTotalBrackets = kBracketsPerOwner * kNumOwners
@@ -236,5 +248,7 @@ for i in range(kTotalBrackets):
     b = Bracket.readFromFile(teams_lookup, games, path)
     brackets.append(b)
 
-writeCheatSheet(brackets)
-writeSortableCheatSheet(brackets)
+kGenerateCheatSheets = True
+if kGenerateCheatSheets:
+    writeCheatSheet(brackets, streak_gids)
+    writeSortableCheatSheet(brackets, streak_gids)

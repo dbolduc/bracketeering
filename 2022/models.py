@@ -126,6 +126,20 @@ class Bracket(object):
         for slot in self.slots:
             total += slot.winner.forecast[slot.game.round] * slot.game.points
         return total
+    
+    # Return the expected length of the initial streak, using 538's forecast
+    # Note that we only start count the Round of 64.
+    #
+    # The formula is like: p0 + p0*p1 + p0*p1*p2 + ...
+    def calcHeatScore(self, streak_gids):
+        total = 0.0
+        current = 1.0
+        for gid in streak_gids:
+            slot_index = gid - 1 # Slots are 0-indexed; Games are 1-indexed.
+            p = self.slots[slot_index].winner.forecast[1] # 1 = Round of 64
+            current *= p
+            total += current
+        return total
 
 class Slot(object):
     def __init__(self, bracket: Bracket, winner: Team, game: Game):
