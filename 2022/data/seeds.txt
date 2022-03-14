@@ -1,0 +1,70 @@
+# Overall seed is implied by the ordering. This file was handwritten.
+# Source: https://twitter.com/jeffborzello/status/1503145926969499655
+Gonzaga
+Arizona
+Kansas
+Baylor
+Auburn
+Kentucky
+Villanova
+Duke
+Wisconsin
+Tennessee
+Purdue
+Texas Tech
+UCLA
+Illinois
+Providence
+Arkansas
+Connecticut
+Houston
+Saint Mary's (CA)
+Iowa
+Alabama
+Louisiana State
+Texas
+Colorado State
+Southern California
+Murray State
+Michigan State
+Ohio State
+Boise State
+North Carolina
+San Diego State
+Seton Hall
+Creighton
+Texas Christian
+Marquette
+Memphis
+San Francisco
+Miami (FL)
+Loyola (IL)
+Davidson
+Iowa State
+Michigan
+Wyoming
+Rutgers
+Indiana
+Virginia Tech
+Notre Dame
+Alabama-Birmingham
+Richmond
+New Mexico State
+Chattanooga
+South Dakota State
+Vermont
+Akron
+Longwood
+Yale
+Colgate
+Montana State
+Delaware
+Saint Peter's
+Jacksonville State
+Cal State Fullerton
+Georgia State
+Norfolk State
+Wright State
+Bryant
+Texas Southern
+Texas A&M-Corpus Christi
