@@ -195,7 +195,7 @@ def writeCheatSheet(brackets, streak_gids):
 def writeSortableCheatSheet(brackets, streak_gids):
     path = "2022/data/sortable_cheat_sheet.csv"
     with open(path, "w+") as file:
-        file.write("ID,Chalk Score,538 Score,Winner,Runner Up,Purdue Depth,VT Depth,UCLA Depth\n")
+        file.write("ID,Chalk Score,538 Score,HEAT Score,Winner,Runner Up,Purdue Depth,VT Depth,UCLA Depth\n")
         for bracket in brackets:
             str_chalk = str(round(bracket.calcChalkScore(chalk), 2))
             str_538 = str(round(bracket.calc538Score(), 2))
