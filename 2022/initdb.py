@@ -3,7 +3,7 @@
 # python3 initdb.py
 # ```
 
-from models import Team, Game
+from models import Team, Game, Bracket, Slot
 
 # ======== Initialization Methods ============
 
@@ -82,23 +82,66 @@ def loadGames(teams):
         else:
             games[gid].team2 = team
 
-        # TODO : My tentative hope is that I can read this file every day to update the full database.
-        #        (Or if I am lucky, every few minutes, if 538 updates it that frequently (and doesn't lock me out))
-        #
-        #        So, what I might want to do is continue processing past the empty (initial) bracket,
-        #        and see if I can set the winners of games that are already known.
+    # TODO : My tentative hope is that I can read this file every day to update the full database.
+    #        (Or if I am lucky, every few minutes, if 538 updates it that frequently (and doesn't lock me out))
+    #
+    #        So, what I might want to do is continue processing past the empty (initial) bracket,
+    #        and see if I can set the winners of games that are already known.
+    #
+    #        For now though, let's initialize the future games.
+    for gid in range(1, 32):
+        games[gid] = Game(gid=gid)
+
     return games
+
+def chalkCompare(game: Game) -> bool:
+    return game.team1.overall_seed < game.team2.overall_seed
+
+def generateBracket(games_src, sorted_gids, winner_f):
+    bracket = Bracket(0)
+
+    # TODO : comment is stale. delete or update or something.
+    #
+    # Let's reverse the list so that we are counting down to the championship game.
+    # Let's also make a copy because we will be writing values to `Game` objects,
+    # and we do not want the original to be affected.
+    games = games_src.copy()
+    for gid in sorted_gids:
+        game = games[gid]
+        team1_wins = winner_f(game)
+        winner = game.team2
+        if team1_wins:
+            winner = game.team1
+        # Add the slot to the bracket
+        bracket.slots.append(Slot(bracket, winner, game))
+
+        # Propogate the winning team to the next round, unless this is the final game.
+        if gid == 1:
+            continue
+        next_gid = gid // 2
+        is_next_team1 = gid % 2 == 0
+        if is_next_team1:
+            games[next_gid].team1 = winner
+        else:
+            games[next_gid].team2 = winner
+
+    return bracket
+        
+
 
 # ======== Main Execution ============
 
 teams, teams_lookup = loadTeams()
 load538Forecast(teams_lookup)
 games = loadGames(teams)
+sorted_gids = sorted(games.keys(), reverse=True)
+bracket = generateBracket(games, sorted_gids, chalkCompare)
+print(bracket)
 
 # DEBUG : print
-sorted_games = sorted(games.values(), key=lambda x: x.gid)
-for game in sorted_games:
-    print("Game: ", game.gid)
-    print("Team1: ", game.team1)
-    print("Team2: ", game.team2)
-    print("")
+#for gid in gids:
+#    game = games[gid]
+#    print("Game: ", game.gid)
+#    print("Team1: ", game.team1)
+#    print("Team2: ", game.team2)
+#    print("")
