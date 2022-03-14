@@ -4,6 +4,7 @@ from collections import deque
 
 # The weight of each game
 kPointsPerRound = [1, 1, 2, 3, 5, 8, 13]
+kRoundToTeamDepth = ["First Four", "Round of 64", "Round of 32", "Sweet 16", "Elite 8", "Final 4", "Runner Up", "Winner"]
 
 class Team(object):
     def __init__(self, name: str, overall_seed: int):
@@ -75,7 +76,7 @@ class Bracket(object):
         if team.play_in:
             return "Who cares?"
 
-        round = 0
+        round = 1
         gid = team.first_game.gid
         slot = self.slots[gid - 1] # gid is 1-indexed; self.slots is 0-indexed.
         while slot.winner == team:
@@ -85,7 +86,7 @@ class Bracket(object):
                 break
             slot = self.slots[gid - 1]
         
-        return ["Round of 64", "Round of 32", "Sweet 16", "Elite 8", "Final 4", "Championship", "Winner"][round]
+        return kRoundToTeamDepth[round]
 
     # Assign some score that represents how close a given pick is to the chalk bracket.
     # Note that if bracket_seed == chalk_seed, we return 1.0
@@ -111,10 +112,6 @@ class Bracket(object):
         for slot in self.slots:
             total += slot.winner.forecast[slot.game.round] * slot.game.points
         return total
-
-    # TODO : consolidate cheat sheet information
-    def cheat_sheet(self):
-        pass
 
 class Slot(object):
     def __init__(self, bracket: Bracket, winner: Team, game: Game):

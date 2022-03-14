@@ -6,6 +6,8 @@
 from models import Team, Game, Bracket, Slot
 import math
 import random
+from collections import deque
+import itertools
 
 # ======== Initialization Methods ============
 
@@ -146,6 +148,38 @@ def generateBracket(games_src, sorted_gids, winner_f, bid: int = 0):
 
     return bracket
 
+# Generate a cheat sheet with relevant information to make drafting easier.
+# TODO : Consider a different format that allows sorting on (Chalk|538) Score / (VT|Purdue) Depth / Winner / etc.
+def writeCheatSheet(brackets):
+    path = "2022/data/cheat_sheet.txt"
+    with open(path, "w+") as file:
+        for bracket in brackets:
+            str_chalk = str(round(bracket.calcChalkScore(chalk), 2))
+            str_538 = str(round(bracket.calc538Score(), 2))
+
+            # Extract the winners from the Elite Eight and on...
+            # I will just order the top 7 teams in a list with no repeats
+            # then report them in order.
+            seen = set()
+            ordered = []
+            for slot in itertools.islice(bracket.slots, 0, 16):
+                if slot.winner.name in seen:
+                    continue
+                seen.add(slot.winner.name)
+                ordered.append(str(slot.winner))
+
+            # Write the information to the file
+            file.write("ID: %s\n" % str(bracket.bid))
+            file.write("Winner:       %s\n" % ordered[0])
+            file.write("Runner Up:    %s\n" % ordered[1])
+            file.write("Final Four:   %s\n" % ", ".join(ordered[2:4]))
+            file.write("Elite Eight:  %s\n" % ", ".join(ordered[4:8]))
+            file.write("Purdue Depth: %s\n" % bracket.teamDepth(teams_lookup["Purdue"]))
+            file.write("VT Depth:     %s\n" % bracket.teamDepth(teams_lookup["Virginia Tech"]))
+            file.write("Chalk Score:  %s\n" % str_chalk)
+            file.write("538 Score:    %s\n" % str_538)
+            file.write("\n")
+
 # ======== Main Execution ============
 
 teams, teams_lookup = loadTeams()
@@ -156,20 +190,24 @@ chalk = generateBracket(games, sorted_gids, chalkCompare)
 anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
 #absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
 
-# ======== Generate Brackets ============
-#
-# This should only be run once...
-# After that, we will just read the brackets from file.
+# ======== Loading Brackets ============
 
+# TODO : Consider unfactoring the generation into a dedicated method (for cleanliness)
 brackets = []
+kGenerateBrackets = False
 kBracketsPerOwner = 4
 kNumOwners = 8
 kTotalBrackets = kBracketsPerOwner * kNumOwners
 for i in range(kTotalBrackets):
     bid = i + 1 # Brackets are 1-indexed
-    b = generateBracket(games, sorted_gids, prob538Compare, bid)
-    b.writeToFile("2022/data/brackets/%s.txt" % bid)
+    path = "2022/data/brackets/%s.txt" % bid
+    if kGenerateBrackets:
+        b = generateBracket(games, sorted_gids, prob538Compare, bid)
+        b.writeToFile(path)
+    b = Bracket.readFromFile(teams_lookup, games, path)
     brackets.append(b)
+
+writeCheatSheet(brackets)
 
 # DEBUG : print
 #bracket = Bracket.readFromFile(teams_lookup, games, "2022/data/brackets/2.txt")
