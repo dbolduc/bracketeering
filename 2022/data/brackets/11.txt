@@ -1,0 +1,68 @@
+11
+1,Texas
+2,Texas
+3,Louisiana State
+4,Arkansas
+5,Texas
+6,Villanova
+7,Louisiana State
+8,Arkansas
+9,Duke
+10,Baylor
+11,Texas
+12,Texas Christian
+13,Villanova
+14,Kansas
+15,Louisiana State
+16,Gonzaga
+17,Arkansas
+18,Alabama
+19,Duke
+20,Baylor
+21,Indiana
+22,Texas
+23,Kentucky
+24,Texas Christian
+25,Chattanooga
+26,Tennessee
+27,Villanova
+28,Kansas
+29,Iowa
+30,Louisiana State
+31,Auburn
+32,Gonzaga
+33,Memphis
+34,Connecticut
+35,Arkansas
+36,Alabama
+37,Texas Tech
+38,Michigan State
+39,Duke
+40,Baylor
+41,North Carolina
+42,Indiana
+43,Akron
+44,Texas
+45,Purdue
+46,San Francisco
+47,Kentucky
+48,Arizona
+49,Texas Christian
+50,Alabama-Birmingham
+51,Chattanooga
+52,Michigan
+53,Tennessee
+54,Ohio State
+55,Villanova
+56,Kansas
+57,Creighton
+58,Iowa
+59,Providence
+60,Louisiana State
+61,Wisconsin
+62,Southern California
+63,Auburn
+73,Rutgers
+85,Indiana
+97,Wright State
+113,Texas A&M-Corpus Christi

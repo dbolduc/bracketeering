@@ -1,0 +1,68 @@
+22
+1,Gonzaga
+2,Gonzaga
+3,Houston
+4,Gonzaga
+5,North Carolina
+6,Houston
+7,San Diego State
+8,Gonzaga
+9,Rutgers
+10,North Carolina
+11,Kentucky
+12,Houston
+13,Villanova
+14,San Diego State
+15,Auburn
+16,Gonzaga
+17,Connecticut
+18,Rutgers
+19,Davidson
+20,North Carolina
+21,UCLA
+22,Purdue
+23,Kentucky
+24,Seton Hall
+25,Houston
+26,Tennessee
+27,Villanova
+28,San Diego State
+29,Providence
+30,Wisconsin
+31,Auburn
+32,Gonzaga
+33,Boise State
+34,Connecticut
+35,Arkansas
+36,Rutgers
+37,Texas Tech
+38,Davidson
+39,Duke
+40,Norfolk State
+41,North Carolina
+42,Indiana
+43,UCLA
+44,Texas
+45,Purdue
+46,San Francisco
+47,Kentucky
+48,Arizona
+49,Seton Hall
+50,Houston
+51,Chattanooga
+52,Colorado State
+53,Tennessee
+54,Ohio State
+55,Villanova
+56,Kansas
+57,San Diego State
+58,Iowa
+59,Providence
+60,Iowa State
+61,Wisconsin
+62,Southern California
+63,Auburn
+73,Rutgers
+85,Indiana
+97,Bryant
+113,Texas Southern

@@ -1,0 +1,68 @@
+8
+1,Purdue
+2,Purdue
+3,Wisconsin
+4,Gonzaga
+5,Purdue
+6,Tennessee
+7,Wisconsin
+8,Gonzaga
+9,Michigan State
+10,Saint Mary's (CA)
+11,Purdue
+12,Arizona
+13,Tennessee
+14,San Diego State
+15,Wisconsin
+16,Gonzaga
+17,Connecticut
+18,Texas Tech
+19,Michigan State
+20,North Carolina
+21,Saint Mary's (CA)
+22,Purdue
+23,Murray State
+24,Arizona
+25,Houston
+26,Tennessee
+27,Villanova
+28,San Diego State
+29,Iowa
+30,Wisconsin
+31,Auburn
+32,Gonzaga
+33,Memphis
+34,Connecticut
+35,Vermont
+36,Alabama
+37,Texas Tech
+38,Michigan State
+39,Duke
+40,Norfolk State
+41,North Carolina
+42,Saint Mary's (CA)
+43,UCLA
+44,Virginia Tech
+45,Purdue
+46,Murray State
+47,Kentucky
+48,Arizona
+49,Seton Hall
+50,Houston
+51,Illinois
+52,Colorado State
+53,Tennessee
+54,Ohio State
+55,Villanova
+56,Kansas
+57,San Diego State
+58,Iowa
+59,Providence
+60,Louisiana State
+61,Wisconsin
+62,Southern California
+63,Auburn
+73,Notre Dame
+85,Indiana
+97,Bryant
+113,Texas Southern

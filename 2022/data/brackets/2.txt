@@ -1,0 +1,68 @@
+2
+1,Auburn
+2,UCLA
+3,Auburn
+4,Gonzaga
+5,UCLA
+6,Tennessee
+7,Auburn
+8,Gonzaga
+9,Texas Tech
+10,UCLA
+11,Texas
+12,Illinois
+13,Tennessee
+14,Kansas
+15,Auburn
+16,Gonzaga
+17,Vermont
+18,Texas Tech
+19,Duke
+20,North Carolina
+21,UCLA
+22,Texas
+23,Kentucky
+24,Arizona
+25,Illinois
+26,Tennessee
+27,Loyola (IL)
+28,Kansas
+29,Providence
+30,Louisiana State
+31,Auburn
+32,Gonzaga
+33,Boise State
+34,Connecticut
+35,Vermont
+36,Alabama
+37,Texas Tech
+38,Michigan State
+39,Duke
+40,Norfolk State
+41,North Carolina
+42,Indiana
+43,UCLA
+44,Texas
+45,Purdue
+46,San Francisco
+47,Kentucky
+48,Arizona
+49,Seton Hall
+50,Alabama-Birmingham
+51,Illinois
+52,Michigan
+53,Tennessee
+54,Loyola (IL)
+55,Villanova
+56,Kansas
+57,Creighton
+58,Richmond
+59,Providence
+60,Louisiana State
+61,Wisconsin
+62,Miami (FL)
+63,Auburn
+73,Rutgers
+85,Indiana
+97,Wright State
+113,Texas Southern

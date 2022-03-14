@@ -1,0 +1,68 @@
+24
+1,Seton Hall
+2,Texas
+3,Seton Hall
+4,Duke
+5,Texas
+6,Seton Hall
+7,San Diego State
+8,Connecticut
+9,Duke
+10,Baylor
+11,Texas
+12,Seton Hall
+13,Tennessee
+14,San Diego State
+15,Auburn
+16,Gonzaga
+17,Connecticut
+18,Texas Tech
+19,Duke
+20,Baylor
+21,UCLA
+22,Texas
+23,Kentucky
+24,Seton Hall
+25,Houston
+26,Tennessee
+27,Villanova
+28,San Diego State
+29,Providence
+30,Louisiana State
+31,Auburn
+32,Gonzaga
+33,Memphis
+34,Connecticut
+35,Arkansas
+36,Rutgers
+37,Texas Tech
+38,Michigan State
+39,Duke
+40,Baylor
+41,Marquette
+42,Indiana
+43,UCLA
+44,Texas
+45,Purdue
+46,Murray State
+47,Kentucky
+48,Arizona
+49,Seton Hall
+50,Houston
+51,Illinois
+52,Michigan
+53,Tennessee
+54,Ohio State
+55,Villanova
+56,Kansas
+57,San Diego State
+58,Iowa
+59,Providence
+60,Louisiana State
+61,Colgate
+62,Miami (FL)
+63,Auburn
+73,Rutgers
+85,Indiana
+97,Bryant
+113,Texas A&M-Corpus Christi

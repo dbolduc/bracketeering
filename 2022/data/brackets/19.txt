@@ -1,0 +1,68 @@
+19
+1,Villanova
+2,Gonzaga
+3,Villanova
+4,Gonzaga
+5,Kentucky
+6,Villanova
+7,Kansas
+8,Gonzaga
+9,Texas Tech
+10,Baylor
+11,Kentucky
+12,Arizona
+13,Villanova
+14,Kansas
+15,Louisiana State
+16,Gonzaga
+17,Connecticut
+18,Texas Tech
+19,Duke
+20,Baylor
+21,UCLA
+22,Virginia Tech
+23,Kentucky
+24,Arizona
+25,Houston
+26,Colorado State
+27,Villanova
+28,Kansas
+29,Iowa
+30,Louisiana State
+31,Southern California
+32,Gonzaga
+33,Memphis
+34,Connecticut
+35,Arkansas
+36,Alabama
+37,Texas Tech
+38,Michigan State
+39,Duke
+40,Baylor
+41,Marquette
+42,Saint Mary's (CA)
+43,UCLA
+44,Virginia Tech
+45,Purdue
+46,San Francisco
+47,Kentucky
+48,Arizona
+49,Texas Christian
+50,Houston
+51,Illinois
+52,Colorado State
+53,Tennessee
+54,Ohio State
+55,Villanova
+56,Kansas
+57,Creighton
+58,Iowa
+59,Providence
+60,Louisiana State
+61,Wisconsin
+62,Southern California
+63,Jacksonville State
+73,Notre Dame
+85,Wyoming
+97,Bryant
+113,Texas Southern
