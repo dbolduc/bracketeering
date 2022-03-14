@@ -52,11 +52,23 @@ class Bracket(object):
                 ret += "\n"
         return ret
 
+    # Write a bracket to a file. The format is:
+    #
+    # ID
+    # Game ID,Winner
+    # Game ID,Winner
+    # ...
     def writeToFile(self, path: str):
         with open(path, "w+") as file:
             file.write("%s" % str(self.bid))
             file.writelines(["\n%s,%s" % (str(s.game.gid),s.winner.name) for s in self.slots])
 
+    # Read a bracket from a file. The format is:
+    #
+    # ID
+    # Game ID,Winner
+    # Game ID,Winner
+    # ...
     @staticmethod
     def readFromFile(teams_lookup, games, path: str):
         bracket = Bracket()
@@ -70,7 +82,7 @@ class Bracket(object):
         return bracket
 
     # TODO : I am not sure this should be a member function
-    def teamDepth(self, team: Team):
+    def teamDepth(self, team: Team, sortable: bool = False):
         # Skip this case where game id != slot index.
         # The only teams I care about are VT and Purdue.
         if team.play_in:
@@ -86,6 +98,8 @@ class Bracket(object):
                 break
             slot = self.slots[gid - 1]
         
+        if sortable:
+            return "%s: %s" % (round, kRoundToTeamDepth[round])
         return kRoundToTeamDepth[round]
 
     # Assign some score that represents how close a given pick is to the chalk bracket.

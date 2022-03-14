@@ -149,7 +149,6 @@ def generateBracket(games_src, sorted_gids, winner_f, bid: int = 0):
     return bracket
 
 # Generate a cheat sheet with relevant information to make drafting easier.
-# TODO : Consider a different format that allows sorting on (Chalk|538) Score / (VT|Purdue) Depth / Winner / etc.
 def writeCheatSheet(brackets):
     path = "2022/data/cheat_sheet.txt"
     with open(path, "w+") as file:
@@ -158,11 +157,14 @@ def writeCheatSheet(brackets):
             str_538 = str(round(bracket.calc538Score(), 2))
 
             # Extract the winners from the Elite Eight and on...
+            #
             # I will just order the top 7 teams in a list with no repeats
             # then report them in order.
+            # 
+            # The top 7 teams are those that the bracket has winning in the final 15 games.
             seen = set()
             ordered = []
-            for slot in itertools.islice(bracket.slots, 0, 16):
+            for slot in itertools.islice(bracket.slots, 0, 15):
                 if slot.winner.name in seen:
                     continue
                 seen.add(slot.winner.name)
@@ -179,6 +181,33 @@ def writeCheatSheet(brackets):
             file.write("Chalk Score:  %s\n" % str_chalk)
             file.write("538 Score:    %s\n" % str_538)
             file.write("\n")
+
+# Write in a different format that allows sorting on (Chalk|538) Score / (VT|Purdue) Depth / Winner / etc.
+def writeSortableCheatSheet(brackets):
+    path = "2022/data/sortable_cheat_sheet.csv"
+    with open(path, "w+") as file:
+        #headers=["ID", "Chalk Score", "538 Score", "Winner", "Runner Up", "Purdue Depth", "VT Depth"]
+        file.write("ID,Chalk Score,538 Score,Winner,Runner Up,Purdue Depth,VT Depth\n")
+        for bracket in brackets:
+            str_chalk = str(round(bracket.calcChalkScore(chalk), 2))
+            str_538 = str(round(bracket.calc538Score(), 2))
+            purdue = bracket.teamDepth(teams_lookup["Purdue"], True)
+            vt = bracket.teamDepth(teams_lookup["Virginia Tech"], True)
+
+            # Extract the winners from the Elite Eight and on...
+            # I will just order the top 7 teams in a list with no repeats
+            # then report them in order.
+            seen = set()
+            ordered = []
+            for slot in itertools.islice(bracket.slots, 0, 3):
+                if slot.winner.name in seen:
+                    continue
+                seen.add(slot.winner.name)
+                ordered.append(str(slot.winner))
+
+            # Write the information to the file
+            file.write("%s,%s,%s,%s,%s,%s,%s\n" % (str(bracket.bid), str_chalk, str_538, ordered[0], ordered[1], purdue, vt))
+
 
 # ======== Main Execution ============
 
@@ -208,17 +237,4 @@ for i in range(kTotalBrackets):
     brackets.append(b)
 
 writeCheatSheet(brackets)
-
-# DEBUG : print
-#bracket = Bracket.readFromFile(teams_lookup, games, "2022/data/brackets/2.txt")
-#print(bracket)
-
-#print("Gonzaga depth: ", bracket.teamDepth(teams_lookup["Gonzaga"]))
-#print("Purdue depth: ", bracket.teamDepth(teams_lookup["Purdue"]))
-#print("VT depth: ", bracket.teamDepth(teams_lookup["Virginia Tech"]))
-
-print("538 Score (of bracket 1): ", brackets[0].calc538Score())
-print("Chalk Score (of bracket 1): ", brackets[0].calcChalkScore(chalk))
-print()
-print("538 Score (of bracket 2): ", brackets[1].calc538Score())
-print("Chalk Score (of bracket 2): ", brackets[1].calcChalkScore(chalk))
+writeSortableCheatSheet(brackets)
