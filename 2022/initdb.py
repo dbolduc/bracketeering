@@ -98,7 +98,7 @@ def chalkCompare(game: Game) -> bool:
     return game.team1.overall_seed < game.team2.overall_seed
 
 def generateBracket(games_src, sorted_gids, winner_f):
-    bracket = Bracket(0)
+    bracket = Bracket()
 
     # TODO : comment is stale. delete or update or something.
     #
@@ -113,7 +113,7 @@ def generateBracket(games_src, sorted_gids, winner_f):
         if team1_wins:
             winner = game.team1
         # Add the slot to the bracket
-        bracket.slots.append(Slot(bracket, winner, game))
+        bracket.slots.appendLeft(Slot(bracket, winner, game))
 
         # Propogate the winning team to the next round, unless this is the final game.
         if gid == 1:
@@ -135,14 +135,10 @@ teams, teams_lookup = loadTeams()
 load538Forecast(teams_lookup)
 games = loadGames(teams)
 sorted_gids = sorted(games.keys(), reverse=True)
-bracket = generateBracket(games, sorted_gids, chalkCompare)
-#print(bracket)
-bracket.writeToFile("2022/data/brackets/chalk.txt")
+#bracket = generateBracket(games, sorted_gids, chalkCompare)
+#bracket.writeToFile("2022/data/brackets/chalk.txt")
+bracket = Bracket()
+bracket.readFromFile(teams_lookup, games, "2022/data/brackets/chalk.txt")
 
 # DEBUG : print
-#for gid in gids:
-#    game = games[gid]
-#    print("Game: ", game.gid)
-#    print("Team1: ", game.team1)
-#    print("Team2: ", game.team2)
-#    print("")
+print(bracket)

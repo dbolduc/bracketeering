@@ -1,5 +1,7 @@
 # These classes are the predecessors to Django Models
 
+from collections import deque
+
 class Team(object):
     def __init__(self, name: str, overall_seed: int):
         self.name = name
@@ -23,10 +25,10 @@ class Game(object):
         self.team2 = None
 
 class Bracket(object):
-    def __init__(self, bid: int):
+    def __init__(self, bid: int = 0):
         self.bid = bid
         self.owner = None
-        self.slots = []
+        self.slots = deque()
 
     # DEBUG : print just so I can verify the generator works.
     def __str__(self):
@@ -43,11 +45,16 @@ class Bracket(object):
     def writeToFile(self, path: str):
         with open(path, "w+") as file:
             file.write("%s" % str(self.bid))
-            file.writelines(["\n%s,%s" % (str(s.game.gid),s.winner.name) for s in reversed(self.slots)])
+            file.writelines(["\n%s,%s" % (str(s.game.gid),s.winner.name) for s in self.slots])
 
-    def readFromFile(self, path: str):
-
-        pass
+    def readFromFile(self, teams_lookup, games, path: str):
+        lines = open(path).read().split('\n')
+        for i, line in enumerate(lines):
+            if i == 0:
+                self.bid = int(line)
+                continue
+            [gid, name] = line.split(',')
+            self.slots.append(Slot(self, teams_lookup[name], games[int(gid)]))
 
     # TODO : consolidate cheat sheet information
     def cheat_sheet():
