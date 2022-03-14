@@ -56,14 +56,17 @@ class Bracket(object):
             file.write("%s" % str(self.bid))
             file.writelines(["\n%s,%s" % (str(s.game.gid),s.winner.name) for s in self.slots])
 
-    def readFromFile(self, teams_lookup, games, path: str):
+    @staticmethod
+    def readFromFile(teams_lookup, games, path: str):
+        bracket = Bracket()
         lines = open(path).read().split('\n')
         for i, line in enumerate(lines):
             if i == 0:
-                self.bid = int(line)
+                bracket.bid = int(line)
                 continue
             [gid, team_name] = line.split(',')
-            self.slots.append(Slot(self, teams_lookup[team_name], games[int(gid)]))
+            bracket.slots.append(Slot(bracket, teams_lookup[team_name], games[int(gid)]))
+        return bracket
 
     # TODO : I am not sure this should be a member function
     def teamDepth(self, team: Team):

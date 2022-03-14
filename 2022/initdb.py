@@ -115,8 +115,8 @@ def prob538Compare(game: Game) -> bool:
     p1_wins = 1.0 / (1.0 + math.exp((r2-r1)*.175))
     return random.random() < p1_wins
 
-def generateBracket(games_src, sorted_gids, winner_f):
-    bracket = Bracket()
+def generateBracket(games_src, sorted_gids, winner_f, bid: int = 0):
+    bracket = Bracket(bid)
 
     # TODO : comment is stale. delete or update or something.
     #
@@ -145,8 +145,6 @@ def generateBracket(games_src, sorted_gids, winner_f):
             games[next_gid].team2 = winner
 
     return bracket
-        
-
 
 # ======== Main Execution ============
 
@@ -156,29 +154,33 @@ games = loadGames(teams)
 sorted_gids = sorted(games.keys(), reverse=True)
 chalk = generateBracket(games, sorted_gids, chalkCompare)
 anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
-absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
-prob_538_1 = generateBracket(games, sorted_gids, prob538Compare)
-prob_538_2 = generateBracket(games, sorted_gids, prob538Compare)
-#prob_538_1.writeToFile("2022/data/brackets/1.txt")
-#prob_538_2.writeToFile("2022/data/brackets/2.txt")
+#absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
 
-#bracket = Bracket()
-#bracket.readFromFile(teams_lookup, games, "2022/data/brackets/chalk.txt")
+# ======== Generate Brackets ============
+#
+# This should only be run once...
+# After that, we will just read the brackets from file.
+
+brackets = []
+kBracketsPerOwner = 4
+kNumOwners = 8
+kTotalBrackets = kBracketsPerOwner * kNumOwners
+for i in range(kTotalBrackets):
+    bid = i + 1 # Brackets are 1-indexed
+    b = generateBracket(games, sorted_gids, prob538Compare, bid)
+    b.writeToFile("2022/data/brackets/%s.txt" % bid)
+    brackets.append(b)
 
 # DEBUG : print
+#bracket = Bracket.readFromFile(teams_lookup, games, "2022/data/brackets/2.txt")
+#print(bracket)
+
 #print("Gonzaga depth: ", bracket.teamDepth(teams_lookup["Gonzaga"]))
 #print("Purdue depth: ", bracket.teamDepth(teams_lookup["Purdue"]))
 #print("VT depth: ", bracket.teamDepth(teams_lookup["Virginia Tech"]))
 
-#print("Chalk Score (of chalk bracket): ", chalk.calcChalkScore(chalk))   # score == 141.0
-#print("Chalk Score (of antiChalk bracket): ", anti_chalk.calcChalkScore(chalk)) # score != 141.0
-
-#print("538 Score (of chalk bracket): ", chalk.calc538Score())
-#print("538 Score (of anti_chalk bracket): ", anti_chalk.calc538Score())
-#print("538 Score (of absolute_538 bracket): ", absolute_538.calc538Score())
-
-print("538 Score (of bracket 1): ", prob_538_1.calc538Score())
-print("Chalk Score (of bracket 1): ", prob_538_1.calcChalkScore(chalk))
+print("538 Score (of bracket 1): ", brackets[0].calc538Score())
+print("Chalk Score (of bracket 1): ", brackets[0].calcChalkScore(chalk))
 print()
-print("538 Score (of bracket 2): ", prob_538_2.calc538Score())
-print("Chalk Score (of bracket 2): ", prob_538_2.calcChalkScore(chalk))
+print("538 Score (of bracket 2): ", brackets[1].calc538Score())
+print("Chalk Score (of bracket 2): ", brackets[1].calcChalkScore(chalk))
