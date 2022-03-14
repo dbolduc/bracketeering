@@ -100,6 +100,9 @@ def loadGames(teams):
 def chalkCompare(game: Game) -> bool:
     return game.team1.overall_seed < game.team2.overall_seed
 
+def antiChalkCompare(game: Game) -> bool:
+    return not chalkCompare(game)
+
 def generateBracket(games_src, sorted_gids, winner_f):
     bracket = Bracket()
 
@@ -117,7 +120,7 @@ def generateBracket(games_src, sorted_gids, winner_f):
             winner = game.team1
 
         # Add the slot to the bracket
-        bracket.slots.appendLeft(Slot(bracket, winner, game))
+        bracket.slots.appendleft(Slot(bracket, winner, game))
 
         # Propogate the winning team to the next round, unless this is the final game.
         if gid == 1:
@@ -139,14 +142,16 @@ teams, teams_lookup = loadTeams()
 load538Forecast(teams_lookup)
 games = loadGames(teams)
 sorted_gids = sorted(games.keys(), reverse=True)
-#bracket = generateBracket(games, sorted_gids, chalkCompare)
-#bracket.writeToFile("2022/data/brackets/chalk.txt")
-bracket = Bracket()
-bracket.readFromFile(teams_lookup, games, "2022/data/brackets/chalk.txt")
-
-print("Gonzaga depth: ", bracket.teamDepth(teams_lookup["Gonzaga"]))
-print("Purdue depth: ", bracket.teamDepth(teams_lookup["Purdue"]))
-print("VT depth: ", bracket.teamDepth(teams_lookup["Virginia Tech"]))
+chalk = generateBracket(games, sorted_gids, chalkCompare)
+antiChalk = generateBracket(games, sorted_gids, antiChalkCompare)
+#chalk.writeToFile("2022/data/brackets/chalk.txt")
+#bracket = Bracket()
+#bracket.readFromFile(teams_lookup, games, "2022/data/brackets/chalk.txt")
 
 # DEBUG : print
-#print(bracket)
+#print("Gonzaga depth: ", bracket.teamDepth(teams_lookup["Gonzaga"]))
+#print("Purdue depth: ", bracket.teamDepth(teams_lookup["Purdue"]))
+#print("VT depth: ", bracket.teamDepth(teams_lookup["Virginia Tech"]))
+
+print("Chalk Score (of chalk bracket): ", chalk.calcChalkScore(chalk))   # score == 141.0
+print("Chalk Score (of team1 bracket): ", antiChalk.calcChalkScore(chalk)) # score != 141.0
