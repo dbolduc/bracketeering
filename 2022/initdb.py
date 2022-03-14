@@ -4,6 +4,8 @@
 # ```
 
 from models import Team, Game, Bracket, Slot
+import math
+import random
 
 # ======== Initialization Methods ============
 
@@ -105,9 +107,13 @@ def antiChalkCompare(game: Game) -> bool:
     return not chalkCompare(game)
 
 def absolute538Compare(game: Game) -> bool:
-    p1 = game.team1.rating
-    p2 = game.team2.rating
-    return p1 > p2
+    return game.team1.rating > game.team2.rating
+
+def prob538Compare(game: Game) -> bool:
+    r1 = game.team1.rating
+    r2 = game.team2.rating
+    p1_wins = 1.0 / (1.0 + math.exp((r2-r1)*.175))
+    return random.random() < p1_wins
 
 def generateBracket(games_src, sorted_gids, winner_f):
     bracket = Bracket()
@@ -151,8 +157,11 @@ sorted_gids = sorted(games.keys(), reverse=True)
 chalk = generateBracket(games, sorted_gids, chalkCompare)
 anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
 absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
+prob_538_1 = generateBracket(games, sorted_gids, prob538Compare)
+prob_538_2 = generateBracket(games, sorted_gids, prob538Compare)
+#prob_538_1.writeToFile("2022/data/brackets/1.txt")
+#prob_538_2.writeToFile("2022/data/brackets/2.txt")
 
-#chalk.writeToFile("2022/data/brackets/chalk.txt")
 #bracket = Bracket()
 #bracket.readFromFile(teams_lookup, games, "2022/data/brackets/chalk.txt")
 
@@ -164,6 +173,12 @@ absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
 #print("Chalk Score (of chalk bracket): ", chalk.calcChalkScore(chalk))   # score == 141.0
 #print("Chalk Score (of antiChalk bracket): ", anti_chalk.calcChalkScore(chalk)) # score != 141.0
 
-print("538 Score (of chalk bracket): ", chalk.calc538Score())
-print("538 Score (of anti_chalk bracket): ", anti_chalk.calc538Score())
-print("538 Score (of absolute_538 bracket): ", absolute_538.calc538Score())
+#print("538 Score (of chalk bracket): ", chalk.calc538Score())
+#print("538 Score (of anti_chalk bracket): ", anti_chalk.calc538Score())
+#print("538 Score (of absolute_538 bracket): ", absolute_538.calc538Score())
+
+print("538 Score (of bracket 1): ", prob_538_1.calc538Score())
+print("Chalk Score (of bracket 1): ", prob_538_1.calcChalkScore(chalk))
+print()
+print("538 Score (of bracket 2): ", prob_538_2.calc538Score())
+print("Chalk Score (of bracket 2): ", prob_538_2.calcChalkScore(chalk))
