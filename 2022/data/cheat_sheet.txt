@@ -1,0 +1,320 @@
+ID: 1
+Winner:       2 Villanova
+Runner Up:    1 Gonzaga
+Final Four:   3 Purdue, 7 Southern California
+Elite Eight:  3 Texas Tech, 5 Saint Mary's (CA), 1 Arizona, 1 Kansas
+Purdue Depth: Final 4
+VT Depth:     Round of 64
+Chalk Score:  114.05
+538 Score:    56.76
+
+ID: 2
+Winner:       2 Auburn
+Runner Up:    4 UCLA
+Final Four:   1 Gonzaga, 3 Tennessee
+Elite Eight:  3 Texas Tech, 6 Texas, 4 Illinois, 1 Kansas
+Purdue Depth: Round of 32
+VT Depth:     Round of 64
+Chalk Score:  111.48
+538 Score:    57.71
+
+ID: 3
+Winner:       1 Kansas
+Runner Up:    7 Murray State
+Final Four:   2 Duke, 5 Houston
+Elite Eight:  5 Connecticut, 9 Marquette, 3 Tennessee, 7 Southern California
+Purdue Depth: Round of 64
+VT Depth:     Sweet 16
+Chalk Score:  103.35
+538 Score:    49.25
+
+ID: 4
+Winner:       1 Baylor
+Runner Up:    5 Houston
+Final Four:   2 Duke, 8 San Diego State
+Elite Eight:  1 Gonzaga, 2 Kentucky, 2 Villanova, 2 Auburn
+Purdue Depth: Round of 64
+VT Depth:     Sweet 16
+Chalk Score:  108.27
+538 Score:    52.4
+
+ID: 5
+Winner:       1 Gonzaga
+Runner Up:    1 Kansas
+Final Four:   4 UCLA, 5 Houston
+Elite Eight:  3 Texas Tech, 3 Purdue, 2 Villanova, 2 Auburn
+Purdue Depth: Elite 8
+VT Depth:     Round of 32
+Chalk Score:  124.51
+538 Score:    68.76
+
+ID: 6
+Winner:       1 Kansas
+Runner Up:    1 Baylor
+Final Four:   1 Gonzaga, 2 Villanova
+Elite Eight:  11b Notre Dame, 2 Kentucky, 12 Alabama-Birmingham, 3 Wisconsin
+Purdue Depth: Round of 32
+VT Depth:     Sweet 16
+Chalk Score:  114.59
+538 Score:    58.19
+
+ID: 7
+Winner:       4 UCLA
+Runner Up:    1 Arizona
+Final Four:   3 Texas Tech, 5 Iowa
+Elite Eight:  1 Gonzaga, 11 Virginia Tech, 2 Villanova, 10 Miami (FL)
+Purdue Depth: Round of 32
+VT Depth:     Elite 8
+Chalk Score:  108.48
+538 Score:    56.74
+
+ID: 8
+Winner:       3 Purdue
+Runner Up:    3 Wisconsin
+Final Four:   1 Gonzaga, 3 Tennessee
+Elite Eight:  7 Michigan State, 5 Saint Mary's (CA), 1 Arizona, 8 San Diego State
+Purdue Depth: Winner
+VT Depth:     Round of 32
+Chalk Score:  108.64
+538 Score:    53.92
+
+ID: 9
+Winner:       1 Kansas
+Runner Up:    1 Baylor
+Final Four:   1 Gonzaga, 2 Villanova
+Elite Eight:  3 Texas Tech, 2 Kentucky, 1 Arizona, 2 Auburn
+Purdue Depth: Sweet 16
+VT Depth:     Round of 32
+Chalk Score:  128.75
+538 Score:    66.73
+
+ID: 10
+Winner:       1 Gonzaga
+Runner Up:    1 Arizona
+Final Four:   1 Baylor, 6 Louisiana State
+Elite Eight:  2 Duke, 2 Kentucky, 11 Michigan, 5 Iowa
+Purdue Depth: Round of 32
+VT Depth:     Round of 64
+Chalk Score:  122.35
+538 Score:    65.21
+
+ID: 11
+Winner:       6 Texas
+Runner Up:    6 Louisiana State
+Final Four:   4 Arkansas, 2 Villanova
+Elite Eight:  2 Duke, 1 Baylor, 9 Texas Christian, 1 Kansas
+Purdue Depth: Round of 32
+VT Depth:     Round of 64
+Chalk Score:  97.06
+538 Score:    48.3
+
+ID: 12
+Winner:       1 Gonzaga
+Runner Up:    3 Wisconsin
+Final Four:   1 Baylor, 2 Villanova
+Elite Eight:  3 Texas Tech, 6 Texas, 4 Illinois, 1 Kansas
+Purdue Depth: Round of 32
+VT Depth:     Round of 64
+Chalk Score:  124.72
+538 Score:    63.74
+
+ID: 13
+Winner:       3 Texas Tech
+Runner Up:    5 Houston
+Final Four:   2 Kentucky, 5 Iowa
+Elite Eight:  4 Arkansas, 1 Baylor, 3 Tennessee, 6 Louisiana State
+Purdue Depth: Sweet 16
+VT Depth:     Round of 64
+Chalk Score:  105.05
+538 Score:    53.76
+
+ID: 14
+Winner:       1 Gonzaga
+Runner Up:    4 Illinois
+Final Four:   3 Purdue, 4 Providence
+Elite Eight:  7 Michigan State, 1 Baylor, 3 Tennessee, 6 Louisiana State
+Purdue Depth: Final 4
+VT Depth:     Round of 64
+Chalk Score:  113.05
+538 Score:    57.4
+
+ID: 15
+Winner:       1 Gonzaga
+Runner Up:    5 Iowa
+Final Four:   2 Kentucky, 4 Illinois
+Elite Eight:  3 Texas Tech, 1 Baylor, 3 Tennessee, 10 Miami (FL)
+Purdue Depth: Round of 32
+VT Depth:     Round of 64
+Chalk Score:  112.27
+538 Score:    61.08
+
+ID: 16
+Winner:       1 Arizona
+Runner Up:    1 Baylor
+Final Four:   2 Duke, 3 Wisconsin
+Elite Eight:  1 Gonzaga, 2 Kentucky, 7 Ohio State, 1 Kansas
+Purdue Depth: Sweet 16
+VT Depth:     Round of 32
+Chalk Score:  123.8
+538 Score:    59.03
+
+ID: 17
+Winner:       4 UCLA
+Runner Up:    5 Iowa
+Final Four:   2 Duke, 3 Tennessee
+Elite Eight:  1 Gonzaga, 2 Kentucky, 5 Houston, 6 Louisiana State
+Purdue Depth: Round of 32
+VT Depth:     Round of 64
+Chalk Score:  105.14
+538 Score:    56.27
+
+ID: 18
+Winner:       4 UCLA
+Runner Up:    1 Arizona
+Final Four:   1 Gonzaga, 6 Louisiana State
+Elite Eight:  3 Texas Tech, 2 Kentucky, 3 Tennessee, 1 Kansas
+Purdue Depth: Sweet 16
+VT Depth:     Round of 32
+Chalk Score:  113.05
+538 Score:    61.85
+
+ID: 19
+Winner:       2 Villanova
+Runner Up:    1 Gonzaga
+Final Four:   2 Kentucky, 1 Kansas
+Elite Eight:  3 Texas Tech, 1 Baylor, 1 Arizona, 6 Louisiana State
+Purdue Depth: Round of 32
+VT Depth:     Sweet 16
+Chalk Score:  121.66
+538 Score:    65.24
+
+ID: 20
+Winner:       5 Houston
+Runner Up:    3 Purdue
+Final Four:   4 Arkansas, 5 Iowa
+Elite Eight:  2 Duke, 5 Saint Mary's (CA), 2 Villanova, 6 Louisiana State
+Purdue Depth: Runner Up
+VT Depth:     Round of 32
+Chalk Score:  99.17
+538 Score:    50.65
+
+ID: 21
+Winner:       1 Gonzaga
+Runner Up:    5 Houston
+Final Four:   4 UCLA, 1 Kansas
+Elite Eight:  14 Montana State, 2 Kentucky, 3 Tennessee, 2 Auburn
+Purdue Depth: Sweet 16
+VT Depth:     Round of 32
+Chalk Score:  113.87
+538 Score:    63.35
+
+ID: 22
+Winner:       1 Gonzaga
+Runner Up:    5 Houston
+Final Four:   8 North Carolina, 8 San Diego State
+Elite Eight:  11a Rutgers, 2 Kentucky, 2 Villanova, 2 Auburn
+Purdue Depth: Sweet 16
+VT Depth:     Round of 64
+Chalk Score:  108.88
+538 Score:    56.54
+
+ID: 23
+Winner:       2 Auburn
+Runner Up:    1 Gonzaga
+Final Four:   3 Purdue, 2 Villanova
+Elite Eight:  2 Duke, 4 UCLA, 8 Seton Hall, 5 Iowa
+Purdue Depth: Final 4
+VT Depth:     Round of 32
+Chalk Score:  120.25
+538 Score:    62.84
+
+ID: 24
+Winner:       8 Seton Hall
+Runner Up:    6 Texas
+Final Four:   2 Duke, 8 San Diego State
+Elite Eight:  5 Connecticut, 1 Baylor, 3 Tennessee, 2 Auburn
+Purdue Depth: Round of 32
+VT Depth:     Round of 64
+Chalk Score:  94.68
+538 Score:    47.65
+
+ID: 25
+Winner:       1 Arizona
+Runner Up:    3 Texas Tech
+Final Four:   6 Texas, 5 Iowa
+Elite Eight:  1 Gonzaga, 5 Saint Mary's (CA), 2 Villanova, 6 Louisiana State
+Purdue Depth: Round of 32
+VT Depth:     Round of 64
+Chalk Score:  110.91
+538 Score:    53.91
+
+ID: 26
+Winner:       1 Gonzaga
+Runner Up:    8 San Diego State
+Final Four:   2 Kentucky, 5 Houston
+Elite Eight:  3 Texas Tech, 4 UCLA, 2 Villanova, 10 Miami (FL)
+Purdue Depth: Round of 32
+VT Depth:     Sweet 16
+Chalk Score:  111.52
+538 Score:    62.42
+
+ID: 27
+Winner:       1 Kansas
+Runner Up:    2 Kentucky
+Final Four:   2 Duke, 7 Ohio State
+Elite Eight:  4 Arkansas, 4 UCLA, 1 Arizona, 10 Miami (FL)
+Purdue Depth: Sweet 16
+VT Depth:     Round of 32
+Chalk Score:  114.36
+538 Score:    57.47
+
+ID: 28
+Winner:       3 Tennessee
+Runner Up:    1 Gonzaga
+Final Four:   3 Purdue, 1 Kansas
+Elite Eight:  2 Duke, 1 Baylor, 4 Illinois, 3 Wisconsin
+Purdue Depth: Final 4
+VT Depth:     Round of 64
+Chalk Score:  121.25
+538 Score:    63.05
+
+ID: 29
+Winner:       2 Villanova
+Runner Up:    3 Purdue
+Final Four:   2 Duke, 5 Iowa
+Elite Eight:  5 Connecticut, 4 UCLA, 1 Arizona, 3 Wisconsin
+Purdue Depth: Runner Up
+VT Depth:     Round of 64
+Chalk Score:  110.24
+538 Score:    55.17
+
+ID: 30
+Winner:       5 Iowa
+Runner Up:    5 Saint Mary's (CA)
+Final Four:   9 Memphis, 2 Villanova
+Elite Eight:  2 Duke, 6 Texas, 4 Illinois, 7 Southern California
+Purdue Depth: Round of 64
+VT Depth:     Round of 64
+Chalk Score:  97.64
+538 Score:    48.61
+
+ID: 31
+Winner:       1 Gonzaga
+Runner Up:    1 Arizona
+Final Four:   2 Kentucky, 5 Iowa
+Elite Eight:  2 Duke, 8 North Carolina, 2 Villanova, 3 Wisconsin
+Purdue Depth: Round of 32
+VT Depth:     Sweet 16
+Chalk Score:  124.77
+538 Score:    69.45
+
+ID: 32
+Winner:       1 Kansas
+Runner Up:    2 Kentucky
+Final Four:   3 Texas Tech, 3 Tennessee
+Elite Eight:  1 Gonzaga, 4 UCLA, 5 Houston, 6 Louisiana State
+Purdue Depth: Sweet 16
+VT Depth:     Round of 64
+Chalk Score:  116.27
+538 Score:    62.13
+
