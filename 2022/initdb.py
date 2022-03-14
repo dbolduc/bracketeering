@@ -182,17 +182,17 @@ def writeCheatSheet(brackets):
             file.write("538 Score:    %s\n" % str_538)
             file.write("\n")
 
-# Write in a different format that allows sorting on (Chalk|538) Score / (VT|Purdue) Depth / Winner / etc.
+# Write in a different format that allows for sorting
 def writeSortableCheatSheet(brackets):
     path = "2022/data/sortable_cheat_sheet.csv"
     with open(path, "w+") as file:
-        #headers=["ID", "Chalk Score", "538 Score", "Winner", "Runner Up", "Purdue Depth", "VT Depth"]
-        file.write("ID,Chalk Score,538 Score,Winner,Runner Up,Purdue Depth,VT Depth\n")
+        file.write("ID,Chalk Score,538 Score,Winner,Runner Up,Purdue Depth,VT Depth,UCLA Depth\n")
         for bracket in brackets:
             str_chalk = str(round(bracket.calcChalkScore(chalk), 2))
             str_538 = str(round(bracket.calc538Score(), 2))
             purdue = bracket.teamDepth(teams_lookup["Purdue"], True)
             vt = bracket.teamDepth(teams_lookup["Virginia Tech"], True)
+            ucla = bracket.teamDepth(teams_lookup["UCLA"], True)
 
             # Extract the winners from the Elite Eight and on...
             # I will just order the top 7 teams in a list with no repeats
@@ -206,7 +206,7 @@ def writeSortableCheatSheet(brackets):
                 ordered.append(str(slot.winner))
 
             # Write the information to the file
-            file.write("%s,%s,%s,%s,%s,%s,%s\n" % (str(bracket.bid), str_chalk, str_538, ordered[0], ordered[1], purdue, vt))
+            file.write("%s,%s,%s,%s,%s,%s,%s,%s\n" % (str(bracket.bid), str_chalk, str_538, ordered[0], ordered[1], purdue, vt, ucla))
 
 
 # ======== Main Execution ============
