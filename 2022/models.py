@@ -40,8 +40,17 @@ class Bracket(object):
                 ret += "\n"
         return ret
 
-    # TODO : I am going to want to be able to write these to a file
-    def export(self, path: str):
+    def writeToFile(self, path: str):
+        with open(path, "w+") as file:
+            file.write("%s" % str(self.bid))
+            file.writelines(["\n%s,%s" % (str(s.game.gid),s.winner.name) for s in reversed(self.slots)])
+
+    def readFromFile(self, path: str):
+
+        pass
+
+    # TODO : consolidate cheat sheet information
+    def cheat_sheet():
         pass
 
 class Slot(object):

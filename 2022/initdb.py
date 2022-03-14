@@ -136,7 +136,8 @@ load538Forecast(teams_lookup)
 games = loadGames(teams)
 sorted_gids = sorted(games.keys(), reverse=True)
 bracket = generateBracket(games, sorted_gids, chalkCompare)
-print(bracket)
+#print(bracket)
+bracket.writeToFile("2022/data/brackets/chalk.txt")
 
 # DEBUG : print
 #for gid in gids:
