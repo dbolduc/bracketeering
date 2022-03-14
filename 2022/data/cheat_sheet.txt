@@ -7,6 +7,7 @@ Purdue Depth: Final 4
 VT Depth:     Round of 64
 Chalk Score:  114.05
 538 Score:    56.76
+HEAT Score:    0.8334
 
 ID: 2
 Winner:       2 Auburn
@@ -17,6 +18,7 @@ Purdue Depth: Round of 32
 VT Depth:     Round of 64
 Chalk Score:  111.48
 538 Score:    57.71
+HEAT Score:    1.3785
 
 ID: 3
 Winner:       1 Kansas
@@ -27,6 +29,7 @@ Purdue Depth: Round of 64
 VT Depth:     Sweet 16
 Chalk Score:  103.35
 538 Score:    49.25
+HEAT Score:    2.5386
 
 ID: 4
 Winner:       1 Baylor
@@ -37,6 +40,7 @@ Purdue Depth: Round of 64
 VT Depth:     Sweet 16
 Chalk Score:  108.27
 538 Score:    52.4
+HEAT Score:    2.576
 
 ID: 5
 Winner:       1 Gonzaga
@@ -47,6 +51,7 @@ Purdue Depth: Elite 8
 VT Depth:     Round of 32
 Chalk Score:  124.51
 538 Score:    68.76
+HEAT Score:    0.6772
 
 ID: 6
 Winner:       1 Kansas
@@ -57,6 +62,7 @@ Purdue Depth: Round of 32
 VT Depth:     Sweet 16
 Chalk Score:  114.59
 538 Score:    58.19
+HEAT Score:    2.632
 
 ID: 7
 Winner:       4 UCLA
@@ -67,6 +73,7 @@ Purdue Depth: Round of 32
 VT Depth:     Elite 8
 Chalk Score:  108.48
 538 Score:    56.74
+HEAT Score:    1.2002
 
 ID: 8
 Winner:       3 Purdue
@@ -77,6 +84,7 @@ Purdue Depth: Winner
 VT Depth:     Round of 32
 Chalk Score:  108.64
 538 Score:    53.92
+HEAT Score:    0.6484
 
 ID: 9
 Winner:       1 Kansas
@@ -87,6 +95,7 @@ Purdue Depth: Sweet 16
 VT Depth:     Round of 32
 Chalk Score:  128.75
 538 Score:    66.73
+HEAT Score:    2.4394
 
 ID: 10
 Winner:       1 Gonzaga
@@ -97,6 +106,7 @@ Purdue Depth: Round of 32
 VT Depth:     Round of 64
 Chalk Score:  122.35
 538 Score:    65.21
+HEAT Score:    2.4841
 
 ID: 11
 Winner:       6 Texas
@@ -107,6 +117,7 @@ Purdue Depth: Round of 32
 VT Depth:     Round of 64
 Chalk Score:  97.06
 538 Score:    48.3
+HEAT Score:    2.5554
 
 ID: 12
 Winner:       1 Gonzaga
@@ -117,6 +128,7 @@ Purdue Depth: Round of 32
 VT Depth:     Round of 64
 Chalk Score:  124.72
 538 Score:    63.74
+HEAT Score:    1.0621
 
 ID: 13
 Winner:       3 Texas Tech
@@ -127,6 +139,7 @@ Purdue Depth: Sweet 16
 VT Depth:     Round of 64
 Chalk Score:  105.05
 538 Score:    53.76
+HEAT Score:    0.6798
 
 ID: 14
 Winner:       1 Gonzaga
@@ -137,6 +150,7 @@ Purdue Depth: Final 4
 VT Depth:     Round of 64
 Chalk Score:  113.05
 538 Score:    57.4
+HEAT Score:    1.8729
 
 ID: 15
 Winner:       1 Gonzaga
@@ -147,6 +161,7 @@ Purdue Depth: Round of 32
 VT Depth:     Round of 64
 Chalk Score:  112.27
 538 Score:    61.08
+HEAT Score:    1.5046
 
 ID: 16
 Winner:       1 Arizona
@@ -157,6 +172,7 @@ Purdue Depth: Sweet 16
 VT Depth:     Round of 32
 Chalk Score:  123.8
 538 Score:    59.03
+HEAT Score:    2.3198
 
 ID: 17
 Winner:       4 UCLA
@@ -167,6 +183,7 @@ Purdue Depth: Round of 32
 VT Depth:     Round of 64
 Chalk Score:  105.14
 538 Score:    56.27
+HEAT Score:    1.5647
 
 ID: 18
 Winner:       4 UCLA
@@ -177,6 +194,7 @@ Purdue Depth: Sweet 16
 VT Depth:     Round of 32
 Chalk Score:  113.05
 538 Score:    61.85
+HEAT Score:    2.3252
 
 ID: 19
 Winner:       2 Villanova
@@ -187,6 +205,7 @@ Purdue Depth: Round of 32
 VT Depth:     Sweet 16
 Chalk Score:  121.66
 538 Score:    65.24
+HEAT Score:    1.1316
 
 ID: 20
 Winner:       5 Houston
@@ -197,6 +216,7 @@ Purdue Depth: Runner Up
 VT Depth:     Round of 32
 Chalk Score:  99.17
 538 Score:    50.65
+HEAT Score:    0.722
 
 ID: 21
 Winner:       1 Gonzaga
@@ -207,6 +227,7 @@ Purdue Depth: Sweet 16
 VT Depth:     Round of 32
 Chalk Score:  113.87
 538 Score:    63.35
+HEAT Score:    0.6489
 
 ID: 22
 Winner:       1 Gonzaga
@@ -217,6 +238,7 @@ Purdue Depth: Sweet 16
 VT Depth:     Round of 64
 Chalk Score:  108.88
 538 Score:    56.54
+HEAT Score:    0.6276
 
 ID: 23
 Winner:       2 Auburn
@@ -227,6 +249,7 @@ Purdue Depth: Final 4
 VT Depth:     Round of 32
 Chalk Score:  120.25
 538 Score:    62.84
+HEAT Score:    2.4386
 
 ID: 24
 Winner:       8 Seton Hall
@@ -237,6 +260,7 @@ Purdue Depth: Round of 32
 VT Depth:     Round of 64
 Chalk Score:  94.68
 538 Score:    47.65
+HEAT Score:    2.486
 
 ID: 25
 Winner:       1 Arizona
@@ -247,6 +271,7 @@ Purdue Depth: Round of 32
 VT Depth:     Round of 64
 Chalk Score:  110.91
 538 Score:    53.91
+HEAT Score:    0.721
 
 ID: 26
 Winner:       1 Gonzaga
@@ -257,6 +282,7 @@ Purdue Depth: Round of 32
 VT Depth:     Sweet 16
 Chalk Score:  111.52
 538 Score:    62.42
+HEAT Score:    0.7558
 
 ID: 27
 Winner:       1 Kansas
@@ -267,6 +293,7 @@ Purdue Depth: Sweet 16
 VT Depth:     Round of 32
 Chalk Score:  114.36
 538 Score:    57.47
+HEAT Score:    2.5493
 
 ID: 28
 Winner:       3 Tennessee
@@ -277,6 +304,7 @@ Purdue Depth: Final 4
 VT Depth:     Round of 64
 Chalk Score:  121.25
 538 Score:    63.05
+HEAT Score:    0.9055
 
 ID: 29
 Winner:       2 Villanova
@@ -287,6 +315,7 @@ Purdue Depth: Runner Up
 VT Depth:     Round of 64
 Chalk Score:  110.24
 538 Score:    55.17
+HEAT Score:    1.5722
 
 ID: 30
 Winner:       5 Iowa
@@ -297,6 +326,7 @@ Purdue Depth: Round of 64
 VT Depth:     Round of 64
 Chalk Score:  97.64
 538 Score:    48.61
+HEAT Score:    1.1899
 
 ID: 31
 Winner:       1 Gonzaga
@@ -307,6 +337,7 @@ Purdue Depth: Round of 32
 VT Depth:     Sweet 16
 Chalk Score:  124.77
 538 Score:    69.45
+HEAT Score:    1.682
 
 ID: 32
 Winner:       1 Kansas
@@ -317,4 +348,5 @@ Purdue Depth: Sweet 16
 VT Depth:     Round of 64
 Chalk Score:  116.27
 538 Score:    62.13
+HEAT Score:    1.5905
 
