@@ -16,6 +16,7 @@ class Team(object):
         self.slot = None
         self.play_in = None
         self.forecast = None
+        self.rating = None
 
         # The following fields are filled in by loadGames()
         self.first_game = None
@@ -103,7 +104,10 @@ class Bracket(object):
     # This reports the expected score of a bracket, according to the 538 model,
     # without counting any regional bonuses.
     def calc538Score(self):
-        pass
+        total = 0.0
+        for slot in self.slots:
+            total += slot.winner.forecast[slot.game.round] * slot.game.points
+        return total
 
     # TODO : consolidate cheat sheet information
     def cheat_sheet(self):

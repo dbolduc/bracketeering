@@ -45,6 +45,7 @@ def load538Forecast(teams_lookup):
         teams_lookup[name].seed = vals[keys['team_seed']]
         teams_lookup[name].region = vals[keys['team_region']]
         teams_lookup[name].slot = int(vals[keys['team_slot']])
+        teams_lookup[name].rating = float(vals[keys['team_rating']])
         teams_lookup[name].play_in = vals[keys['playin_flag']] == "1"
 
 # Define the official bracket matchups, by initializing a set of games.
@@ -103,6 +104,11 @@ def chalkCompare(game: Game) -> bool:
 def antiChalkCompare(game: Game) -> bool:
     return not chalkCompare(game)
 
+def absolute538Compare(game: Game) -> bool:
+    p1 = game.team1.rating
+    p2 = game.team2.rating
+    return p1 > p2
+
 def generateBracket(games_src, sorted_gids, winner_f):
     bracket = Bracket()
 
@@ -143,7 +149,9 @@ load538Forecast(teams_lookup)
 games = loadGames(teams)
 sorted_gids = sorted(games.keys(), reverse=True)
 chalk = generateBracket(games, sorted_gids, chalkCompare)
-antiChalk = generateBracket(games, sorted_gids, antiChalkCompare)
+anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
+absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
+
 #chalk.writeToFile("2022/data/brackets/chalk.txt")
 #bracket = Bracket()
 #bracket.readFromFile(teams_lookup, games, "2022/data/brackets/chalk.txt")
@@ -153,5 +161,9 @@ antiChalk = generateBracket(games, sorted_gids, antiChalkCompare)
 #print("Purdue depth: ", bracket.teamDepth(teams_lookup["Purdue"]))
 #print("VT depth: ", bracket.teamDepth(teams_lookup["Virginia Tech"]))
 
-print("Chalk Score (of chalk bracket): ", chalk.calcChalkScore(chalk))   # score == 141.0
-print("Chalk Score (of team1 bracket): ", antiChalk.calcChalkScore(chalk)) # score != 141.0
+#print("Chalk Score (of chalk bracket): ", chalk.calcChalkScore(chalk))   # score == 141.0
+#print("Chalk Score (of antiChalk bracket): ", anti_chalk.calcChalkScore(chalk)) # score != 141.0
+
+print("538 Score (of chalk bracket): ", chalk.calc538Score())
+print("538 Score (of anti_chalk bracket): ", anti_chalk.calc538Score())
+print("538 Score (of absolute_538 bracket): ", absolute_538.calc538Score())
