@@ -3,7 +3,7 @@
 # python3 initdb.py
 # ```
 
-from models import Team, Game, Bracket, Slot
+from models import Team, Game, Bracket, Slot, kPointsPerRound
 import math
 import random
 from collections import deque
@@ -218,6 +218,79 @@ def writeSortableCheatSheet(brackets, streak_gids):
             # Write the information to the file
             file.write("%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (str(bracket.bid), str_chalk, str_538, str_heat, ordered[0], ordered[1], purdue, vt, ucla))
 
+# ======== Monte Carlo Simulation ============
+
+def bonusIndex(gid: int):
+    round = 7 - gid.bit_length()
+    # There are no bonuses awarded for getting the First 4 games (round 0) correct
+    # or for getting the overall Winner correct (round 6)
+    if round == 0 or round == 6:
+        return None
+    
+    if round == 5: # Final 4 winners aka National Championship participants.
+        return 1
+
+    if round == 4: # Elite 8 winners aka Final 4 participants.
+        return 2
+    
+    # TODO : Document. I am going to just assign each bonus a unique ID.
+    # TODO : remember where this calculation comes from. Give examples?
+    return 4 * round + gid // pow(2, 4 - round) - 3 # Duh...
+
+# TODO : I think this method is associative
+# Returns [total points, initial streak]
+def bracketCompare(b1: Bracket, b2: Bracket):
+    # Game Points + Bonuses
+    total_points = 0
+    bonuses = {}
+    for s1, s2 in zip(b1.slots, b2.slots):
+        bonus_index = bonusIndex(s1.game.gid)
+        if bonus_index and bonus_index not in bonuses:
+            bonuses[bonus_index] = True
+
+        if s1.winner == s2.winner:
+            total_points += kPointsPerRound[s1.game.round]
+        elif bonus_index:
+            bonuses[bonus_index] = False
+
+    # Sum Bonuses
+    for bonus_achieved in bonuses.values():
+        if bonus_achieved:
+            total_points += 5
+
+    # Initial Streak
+    initial_streak = 0
+    for gid in streak_gids:
+        slot_index = gid - 1 # Slots are 0-indexed; Games are 1-indexed.
+        if b1.slots[slot_index].winner == b2.slots[slot_index].winner:
+            initial_streak += 1
+        else:
+            break
+    
+    return [total_points, initial_streak]
+
+
+
+# TODO : Document more and better
+# TODO (with infinite time) : Turn this into a Dataproc job that can run in parallel.
+# 
+# For now it will generate n brackets based on 538's pre-tournament projections.
+# It does not update team scores as the simulation progresses.
+# (E.g. If you know Team A has beaten Team B, then you will think Team A is a little bit stronger in the next round)
+#
+# n = number of simulations
+# brackets = list of brackets
+# f = function over brackets
+#
+# returns h[bid] = [best bracket wins, streak wins]
+#
+# TODO : generalize. Eventually I would want to operate on a "League" and compute all payouts.
+def MC(n: int, brackets, f):
+    for _ in range(n):
+        mc = generateBracket(games, sorted_gids, prob538Compare)
+        
+
+    
 
 # ======== Main Execution ============
 
@@ -227,7 +300,7 @@ games = loadGames(teams)
 sorted_gids = sorted(games.keys(), reverse=True)
 streak_gids = loadStreak()
 chalk = generateBracket(games, sorted_gids, chalkCompare)
-anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
+#anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
 #absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
 
 # ======== Loading Brackets ============
@@ -248,7 +321,12 @@ for i in range(kTotalBrackets):
     b = Bracket.readFromFile(teams_lookup, games, path)
     brackets.append(b)
 
-kGenerateCheatSheets = True
+kGenerateCheatSheets = False
 if kGenerateCheatSheets:
     writeCheatSheet(brackets, streak_gids)
     writeSortableCheatSheet(brackets, streak_gids)
+
+x = bracketCompare(brackets[1], brackets[1])
+print(x)
+x = bracketCompare(brackets[1], brackets[2])
+print(x)

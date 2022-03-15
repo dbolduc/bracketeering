@@ -118,7 +118,7 @@ class Bracket(object):
             total += Bracket.chalkFunc(b.winner.overall_seed, c.winner.overall_seed) * b.game.points
         return total
 
-    # TODO :
+    # TODO : It is easy enough to add regional bonuses, I should do it.
     # This reports the expected score of a bracket, according to the 538 model,
     # without counting any regional bonuses.
     def calc538Score(self):
@@ -128,7 +128,7 @@ class Bracket(object):
         return total
     
     # Return the expected length of the initial streak, using 538's forecast
-    # Note that we only start count the Round of 64.
+    # Note that we only count the Round of 64.
     #
     # The formula is like: p0 + p0*p1 + p0*p1*p2 + ...
     def calcHeatScore(self, streak_gids):
