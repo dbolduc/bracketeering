@@ -239,7 +239,7 @@ def bonusIndex(gid: int):
 
 # TODO : I think this method is associative
 # Returns [total points, initial streak]
-def bracketCompare(b1: Bracket, b2: Bracket):
+def bracketCompare(b1: Bracket, b2: Bracket, streak_gids):
     # Game Points + Bonuses
     total_points = 0
     bonuses = {}
@@ -248,7 +248,10 @@ def bracketCompare(b1: Bracket, b2: Bracket):
         if bonus_index and bonus_index not in bonuses:
             bonuses[bonus_index] = True
 
-        if s1.winner == s2.winner:
+        # TODO : I do not understand how, but these are different objects
+        # Let's compare team name
+        #if s1.winner == s2.winner:
+        if s1.winner.name == s2.winner.name:
             total_points += kPointsPerRound[s1.game.round]
         elif bonus_index:
             bonuses[bonus_index] = False
@@ -262,14 +265,15 @@ def bracketCompare(b1: Bracket, b2: Bracket):
     initial_streak = 0
     for gid in streak_gids:
         slot_index = gid - 1 # Slots are 0-indexed; Games are 1-indexed.
-        if b1.slots[slot_index].winner == b2.slots[slot_index].winner:
+        # TODO : I do not understand how, but these are different objects
+        # Let's compare team name
+        #if b1.slots[slot_index].winner == b2.slots[slot_index].winner:
+        if b1.slots[slot_index].winner.name == b2.slots[slot_index].winner.name:
             initial_streak += 1
         else:
             break
     
     return [total_points, initial_streak]
-
-
 
 # TODO : Document more and better
 # TODO (with infinite time) : Turn this into a Dataproc job that can run in parallel.
@@ -280,14 +284,50 @@ def bracketCompare(b1: Bracket, b2: Bracket):
 #
 # n = number of simulations
 # brackets = list of brackets
-# f = function over brackets
+# ################f = function over brackets
 #
+#
+# TODO : Return value is stale. But I probably want what the documentation says, not what the code says.
 # returns h[bid] = [best bracket wins, streak wins]
 #
 # TODO : generalize. Eventually I would want to operate on a "League" and compute all payouts.
-def MC(n: int, brackets, f):
+def MC(n: int, brackets, streak_gids):
+    point_bucket = {}
+    streak_bucket = {}
+    for bracket in brackets:
+        point_bucket[bracket.bid] = 0.0
+        # TODO : For now we will just share the splits.
+        # The real rules will keep going until one remains.
+        streak_bucket[bracket.bid] = 0.0
+
     for _ in range(n):
         mc = generateBracket(games, sorted_gids, prob538Compare)
+        max_points = 0
+        max_points_bids = []
+        max_streak = 0
+        max_streak_bids = []
+        for bracket in brackets:
+            points, streak = bracketCompare(bracket, mc, streak_gids)
+            if points > max_points:
+                max_points = points
+                max_points_bids = [bracket.bid]
+            elif points == max_points:
+                max_points_bids.append(bracket.bid)
+            if streak > max_streak:
+                max_streak = streak
+                max_streak_bids = [bracket.bid]
+            elif streak == max_streak:
+                max_streak_bids.append(bracket.bid)
+
+        # Accumulate results into buckets
+        point_sharers = len(max_points_bids)
+        for bid in max_points_bids:
+            point_bucket[bid] += 1.0 / point_sharers
+        streak_sharers = len(max_streak_bids)
+        for bid in max_streak_bids:
+            streak_bucket[bid] += 1.0 / streak_sharers
+    
+    return [point_bucket, streak_bucket]
         
 
     
@@ -326,7 +366,14 @@ if kGenerateCheatSheets:
     writeCheatSheet(brackets, streak_gids)
     writeSortableCheatSheet(brackets, streak_gids)
 
-x = bracketCompare(brackets[1], brackets[1])
-print(x)
-x = bracketCompare(brackets[1], brackets[2])
-print(x)
+#x = bracketCompare(brackets[1], brackets[1])
+#print(x)
+#x = bracketCompare(brackets[1], brackets[2])
+#print(x)
+
+#x = MC(10000, brackets, streak_gids)
+#print("\n\n")
+#print("Points: ", x[0])
+#print("\n\n")
+#print("Streaks: ", x[1])
+
