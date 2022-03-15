@@ -1,20 +1,22 @@
-# Bracketeering 2021 - Rules
+# Bracketeering 2022 - Rules
 
 ## Concept:
 This year we decided to draft auto-generated March Madness brackets.
 
 ## Brackets:
-Brackets were generated using a formula with KenPom rankings in mind. 4 brackets were generated per owner.
+Brackets were generated using a formula based on [538 Power Ratings]. 4 brackets were generated per owner.
+
+[538 Power Ratings]: https://projects.fivethirtyeight.com/2022-march-madness-predictions/
 
 ## Draft:
 Snake draft with the order randomly generated. 4 brackets were drafted per person.
 
 ## Buy In:
-$20 each
+$20 each x 8 owners
 
 ## Payouts:
 
-#### Sum Of 2 ($80):
+#### Sum Of 2 ($100):
 This goes to the owner with the highest score of their top two brackets. If owners are tied, the money will be split evenly between them.
 
 #### Best Bracket ($20):
@@ -24,7 +26,7 @@ This goes to the owner of the individual bracket with the highest score. If owne
 This goes to the owner whose bracket has the most elite eight teams. First tiebreaker is the owner whose bracket has the least elite eight teams. Second tiebreaker is the owner whose remaining bracket has the most elite eight teams. Final tiebreaker is the owner whose remaining bracket has the least elite eight teams. If owners are still tied, the money will be split evenly between them.
 
 #### Initial Streak ($20):
-Starting in the Round of 64, if a bracket does not pick the result of a game correctly, it is eliminated from the pool. However, if all remaining brackets were to be eliminated at the same time, the outcome of the game is discounted, and all brackets that were alive before the game remain alive. This continues until only one bracket remains. The owner of that bracket wins the payout.
+Starting in the Round of 64, if a bracket does not pick the result of a game correctly, it is eliminated from the pool. However, if all remaining brackets were to be eliminated at the same time, the outcome of the game is discounted, and all brackets that were alive before the game remain alive. This continues until only one bracket remains. The owner of that bracket wins the payout. The games are ordered based on when they end, not when they start.
 
 ## Scoring:
 
