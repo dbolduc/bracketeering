@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div>
+	{% if game %}
+		<h1>{{game}}: {{game.get_matchup_str}}</h1>
+		<p>{{game.get_round_str}} - {{game.get_region_str}}</p>
+		{% if game.winner %}
+		<p>Winner: {{game.winner}}</p>
+		{% endif %}
+		{% with prev=game.get_prev_game1 %}
+			{% if prev %}
+			<p>Previous Game: <a href="{% url 'game' prev.gid %}">{{prev.get_matchup_str}}</a></p>
+			{% endif %}
+		{% endwith %}
+		{% with prev=game.get_prev_game2 %}
+			{% if prev %}
+			<p>Previous Game: <a href="{% url 'game' prev.gid %}">{{prev.get_matchup_str}}</a></p>
+			{% endif %}
+		{% endwith %}
+		{% with next=game.get_next_game %}
+			{% if next %}
+			<p>Next Game: <a href="{% url 'game' next.gid %}">{{next.get_matchup_str}}</a></p>
+			{% endif %}
+		{% endwith %}
+		<!-- TODO : admin auth only? -->
+		{% if game.team1 and game.team2 %}
+		<!-- 
+		<div>
+			<h2>Set Winner:</h2>
+			<input type="button" id="team1-btn" text="{{game.team1}}" />
+			<input type="button" id="team2-btn" text="{{game.team2}}" />
+		</div>
+		-->
+		{% endif %}
+
+	{% else %}
+		<h1>Game Does Not Exist :/</h1>
+	{% endif %}
+
+	<table id="game">
+		<thead><tr>
+			<th>Winner</th>
+			<th>Bracket</th>
+			<th>Owner</th>
+			<th>Points</th>
+			<th>Potential</th>
+		</tr></thead>
+		<tbody>
+	{% for slot in slots %}
+		<tr>
+			<td><a href="{% url 'team' slot.winner.get_link_name %}">{{slot.winner}}</a></td>
+			<td><a href="{% url 'bracket' slot.bracket.bid %}">{{slot.bracket}}</a></td>
+			<td><a href="{% url 'owner' slot.bracket.owner.name %}">{{slot.bracket.owner}}</a></td>
+			<td>{{slot.points}}</td>
+			<td>{{slot.potential}}</td>
+		</tr>
+	{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}
+
+{% block page_javascript %}
+<script>
+sortTable($('#game'),2,1);
+sortTable($('#game'),0,1);
+sortTable($('#game'),4,1);
+sortTable($('#game'),3,1);
+</script>
+{% endblock %}

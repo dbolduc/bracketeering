@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div>
+	<div class="row">
+		{% if team %}
+			<h1>{{team}}</h1>
+			<p>Status: {{team.get_alive_str}}</p>
+		{% else %}
+			No Teams Yet
+		{% endif %}
+	</div>
+	<div class="row" style="margin-bottom:15px">
+	{% if depths %}
+		<table id="depths">
+			<thead><tr>
+				<th>Bracket</th>
+				<th>Owner</th>
+				<th>Depth</th>
+			</tr></thead>
+			<tbody>
+			{% for depth in depths %}
+				<tr>
+					<td><a href="{% url 'bracket' depth.bracket.bid %}">Bracket: {{depth.bracket.bid}}</a></td>
+					<td><a href="{% url 'owner' depth.bracket.owner.name %}">{{depth.bracket.owner.name}}</a></td>
+					<td>{{depth.depth}}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p>No Brackets Yet</p>
+	{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+{% block page_javascript %}
+<script>
+sortTable($('#depths'),2,1);
+sortTable($('#depths'),1,1);
+</script>
+{% endblock %}
+

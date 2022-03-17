@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+{% load static %}
+<div>
+	{% if bracket %}
+		<h1>Bracket {{bracket.bid}}</h1>
+		<p>Owner: <a href="{% url 'owner' bracket.owner.name %}">{{bracket.owner}}</a></p>
+		<p>Points: {{bracket.get_points}}</p>
+		<p>Potential: {{bracket.get_potential}}</p>
+		<p>Elite Eight: {{bracket.elite_eight}}</p>
+		<p>Elite Eight Potential: {{bracket.elite_eight_pot}}</p>
+		<p><a href="{% get_static_prefix %}{{ bracket.bid }}.pdf" target="_blank">{{bracket.bid}}.pdf</a></p>
+	{% else %}
+		<h1>Bracket Does Not Exist :/</h1>
+	{% endif %}
+
+	{% if slots %}
+		<table id="bracket">
+			<thead><tr>
+				<th>Game</th>
+				<th>Winner</th>
+				<th>Round</th>
+				<th>Region</th>
+				<th>Points</th>
+				<th>Potential</th>
+			</tr></thead>
+			<tbody>
+		{% for slot in slots %}
+		<tr>
+			<td><a href="{% url 'game' slot.game.gid %}">{{slot.game}}</a></td>
+			<td><a href="{% url 'team' slot.winner.get_link_name %}">{{slot.winner}}</a></td>
+			<td>{{slot.game.get_round_str}}</td>
+			<td>{{slot.game.get_region_str}}</td>
+			<td>{{slot.points}}</td>
+			<td>{{slot.potential}}</td>
+		</tr>
+		{% endfor %}
+			</tbody>
+	{% endif %}
+</div>
+{% endblock %}
+{% block page_javascript %}
+<script>
+sortTable($('#bracket'),0,-1);
+</script>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="row">
+		<h3>Concept:</h3>
+		<p>This year we decided to draft auto-generated March Madness brackets.</p>
+
+		<h3>Brackets:</h3>
+		<p>Brackets were generated using a formula with KenPom rankings in mind. 4 brackets were generated per owner.</p>
+
+		<h3>Draft:</h3>
+		<p>Snake draft with the order randomly generated. 4 brackets were drafted per person.</p>
+		
+		<h3>Buy In:</h3>
+		<p>$20 each</p>
+
+		<h3>Payouts:</h3>
+		<h5>Sum Of 2 ($80):</h5>
+		<p>This goes to the owner with the highest score of their top two brackets. If owners are tied, the money will be split evenly between them.</p>
+		<h5>Best Bracket ($20):</h5>
+		<p>This goes to the owner of the individual bracket with the highest score. If owners are tied, the money will be split evenly between them.</p>
+		<h5>Elite Eight ($20):</h5>
+		<p>This goes to the owner whose bracket has the most elite eight teams. First tiebreaker is the owner whose bracket has the least elite eight teams. Second tiebreaker is the owner whose remaining bracket has the most elite eight teams. Final tiebreaker is the owner whose remaining bracket has the least elite eight teams. If owners are still tied, the money will be split evenly between them.
+		<h5>Initial Streak ($20):</h5>
+		<p>Starting in the Round of 64, if a bracket does not pick the result of a game correctly, it is eliminated from the pool. However, if all remaining brackets were to be eliminated at the same time, the outcome of the game is discounted, and all brackets that were alive before the game remain alive. This continues until only one bracket remains. The owner of that bracket wins the payout.</p>
+
+		<h3>Scoring:</h3>
+		<h5>Regular Points:</h5>
+		<p>Points are awarded to a bracket that picks the correct winner of a game. The games carry different weights depending on which round of the tournament they are in. The weights are given by Fibonacci numbers as shown below.</p>
+		<table>
+			<tr>
+				<th>Round</th>
+				<th>Points</th>
+			</tr>
+			<tr>
+				<td>First Four</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Round of 64</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Round of 32</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Sweet Sixteen</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>Elite Eight</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>Final Four</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>National Championship</td>
+				<td>13</td>
+			</tr>
+		</table>
+		<h5>Bonus Points:</h5>
+		<p>In addition to the standard points for a win, there are also bonuses awarded for getting an entire region (quadrant) of the bracket correct for games played in the Round of 64, Round of 32, or Sweet Sixteen. In addition to these regional bonuses, there will also be a bonus awarded for a bracket that gets every Final Four team correct, as well as for a bracket that gets the two National Championship teams correct. All such bonuses are worth 5 points. A bracket can earn multiple bonuses.</p>
+</div>
+
+{% endblock %}
+

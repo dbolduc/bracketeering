@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div>
+	<div class="row"><h1>Leaderboard</h1></div>
+
+	<div class="row" style="margin-bottom:15px">
+	{% if brackets %}
+		<table id="main_brackets">
+			<thead><tr>
+				<th>Bracket</th>
+				<th>Owner</th>
+				<th>Points</th>
+				<th>Potential</th>
+				<!--
+				<th>R0</th>
+				<th>R64</th>
+				<th>R32</th>
+				<th>S16</th>
+				<th>E8</th>
+				<th>F4</th>
+				<th>NC</th>
+				-->
+			</tr></thead>
+			<tbody>
+			{% for bracket in brackets %}
+				<tr>
+					<td><a href="{% url 'bracket' bracket.bid %}">Bracket: {{bracket.bid}}</a></td>
+					<td><a href="{% url 'owner' bracket.owner.name %}">{{bracket.owner.name}}</a></td>
+					<td>{{bracket.get_points}}</td>
+					<td>{{bracket.get_potential}}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p>No Brackets Yet</p>
+	{% endif %}
+	</div>
+	<div class="row">
+	{% if owners %}
+		<table>
+			<thead><tr>
+				<th>Owner</th>
+				<th>Sum of 2 ($80):</th>
+				<th>Best($20):</th>
+				<th>Elite Eight ($20):</th>
+				<th>Streak ($20):</th>
+				<th>Payout ($):</th>
+			</tr></thead>
+			{% for owner in owners %}
+			<tr>
+				<td><a href="{% url 'owner' owner.name %}">{{owner.name}}</a></td>
+				<td>{{owner.sum_of_2}}</td>
+				<td>{{owner.best_bracket}}</td>
+				<td>{{owner.max_elite_eight}}</td>
+				<td>{{owner.get_streak_winner_str}}</td>
+				<td>{{owner.payout|floatformat:2}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+		<p>No Owners Yet</p>
+	{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+{% block page_javascript %}
+<script>
+sortTable($('#main_brackets'),3,1);
+sortTable($('#main_brackets'),2,1);
+</script>
+{% endblock %}
+

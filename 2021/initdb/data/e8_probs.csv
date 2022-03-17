@@ -1,0 +1,28 @@
+Gonzaga,Baylor,.6
+Gonzaga,Houston,.69
+Gonzaga,Michigan,.74
+Gonzaga,USC,.75
+Gonzaga,Arkansas,.77
+Gonzaga,UCLA,.81
+Gonzaga,Oregon St,.83
+Baylor,Houston,.62
+Baylor,Michigan,.62
+Baylor,USC,.6
+Baylor,Arkansas,.75
+Baylor,UCLA,.7
+Baylor,Oregon St,.79
+Houston,Michigan,.52
+Houston,USC,.49
+Houston,Arkansas,.6
+Houston,UCLA,.6
+Houston,Oregon St,.73
+Michigan,USC,.46
+Michigan,Arkansas,.59
+Michigan,UCLA,.62
+Michigan,Oregon St,.66
+USC,Arkansas,.59
+USC,UCLA,.63
+USC,Oregon St,.68
+Arkansas,UCLA,.5
+Arkansas,Oregon St,.60
+UCLA,Oregon St,.58

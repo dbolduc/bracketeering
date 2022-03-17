@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div>
+	<div class="row" style="margin-bottom:15px">
+	{% if brackets %}
+		<table id="draft_table">
+			<thead><tr>
+				<th>Pick</th>
+				<th>Bracket</th>
+				<th>Owner</th>
+			</tr></thead>
+			<tbody>
+			{% for bracket in brackets %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+					<td><a href="{% url 'bracket' bracket.bid %}">Bracket: {{bracket.bid}}</a></td>
+					<td><a href="{% url 'owner' bracket.owner.name %}">{{bracket.owner.name}}</a></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p>No Draft Yet</p>
+	{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+

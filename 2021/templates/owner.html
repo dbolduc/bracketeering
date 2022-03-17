@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="row">
+	{% if owner %}
+		<h1>{{owner.name}}</h1>
+		<p>Payout ($): {{owner.payout|floatformat:2}}</p>
+		<p>Streak Winner: {{owner.get_streak_winner_str}}</p>
+	{% else %}
+		<h1>Owner Does Not Exist :/</h1>
+	{% endif %}
+</div>
+
+<div class="row">
+        {% if brackets %}
+                <table id="owner_table">
+                        <thead><tr>
+                                <th>Bracket</th>
+                                <th>Points</th>
+                                <th>Potential</th>
+                                <th>Elite Eight</th>
+                        </tr></thead>
+                        <tbody>
+                        {% for bracket in brackets %}
+                                <tr>
+                                        <td><a href="{% url 'bracket' bracket.bid %}">Bracket: {{bracket.bid}}</a></td>
+                                        <td>{{bracket.get_points}}</td>
+                                        <td>{{bracket.get_potential}}</td>
+                                        <td>{{bracket.elite_eight}}</td>
+                                </tr>
+                        {% endfor %}
+                        </tbody>
+                </table>
+        {% else %}
+                <p>No Brackets Yet</p>
+        {% endif %}
+</div>
+
+{% endblock %}
+
