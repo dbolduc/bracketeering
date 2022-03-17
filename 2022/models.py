@@ -1,6 +1,7 @@
 # These classes are the predecessors to Django Models
 
 from collections import deque
+import itertools
 
 # The weight of each game
 kPointsPerRound = [1, 1, 2, 3, 5, 8, 13]
@@ -83,13 +84,21 @@ class Bracket(object):
 
     # TODO : I am not sure this should be a member function
     def teamDepth(self, team: Team, sortable: bool = False):
-        # Skip this case where game id != slot index.
-        # The only teams I care about are VT and Purdue.
+        gid = team.first_game.gid
+
+        # Playin slots do not lineup with Game IDs. The 4 games are at the end of self.slots.
+        # We will do a linear search from the end of list to find the game.
+        #
+        # I almost certainly should have made slots a map instead of a list
         if team.play_in:
-            return "Who cares?"
+            for playin_slot in itertools.islice(reversed(self.slots), 0, 4):
+                if playin_slot.game.gid == gid:
+                    if playin_slot.winner == team:
+                        gid //= 2
+                        break
+                    return kRoundToTeamDepth[0] # First Four
 
         round = 1
-        gid = team.first_game.gid
         slot = self.slots[gid - 1] # gid is 1-indexed; self.slots is 0-indexed.
         while slot.winner == team:
             round += 1
@@ -149,3 +158,8 @@ class Slot(object):
     
     def __str__(self):
         return "Game: %s | Winner: %s" % (self.game.gid, self.winner)
+
+class Owner(object):
+    def __init__(self, name: str):
+        self.name = name
+        self.brackets = []

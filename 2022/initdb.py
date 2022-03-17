@@ -3,7 +3,7 @@
 # python3 initdb.py
 # ```
 
-from models import Team, Game, Bracket, Slot, kPointsPerRound
+from models import Team, Game, Bracket, Slot, Owner, kPointsPerRound
 import math
 import random
 from collections import deque
@@ -11,6 +11,22 @@ import itertools
 import copy
 
 # ======== Initialization Methods ============
+
+def loadDraft(brackets):
+    owners = {}
+    path = '2022/data/draft.csv'
+    picks = open(path).read().split('\n')
+    for pick in picks:
+        if not pick or pick[0] == '#':
+            continue
+        owner, bid = pick.split(',')
+        if owner not in owners:
+            owners[owner] = Owner(owner)
+
+        bracket = brackets[int(bid) - 1] # Brackets are 1-indexed
+        bracket.owner = owner
+        owners[owner].brackets.append(bracket)
+    return owners
 
 def loadTeams():
     path = '2022/data/seeds.txt'
@@ -365,6 +381,15 @@ kGenerateCheatSheets = False
 if kGenerateCheatSheets:
     writeCheatSheet(brackets, streak_gids)
     writeSortableCheatSheet(brackets, streak_gids)
+
+owners = loadDraft(brackets)
+
+for owner in owners.values():
+    print(owner.name)
+    for bracket in owner.brackets:
+        team = bracket.slots[-4].winner
+        print("Bracket %s Winner: %s | Depth: %s" % (bracket.bid, team.name, bracket.teamDepth(team)))
+    print()
 
 #x = bracketCompare(brackets[1], brackets[1])
 #print(x)
