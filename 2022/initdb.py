@@ -46,6 +46,9 @@ def loadTeams():
 # Read 538's projection data sourced from:
 # https://projects.fivethirtyeight.com/march-madness-api/2022/fivethirtyeight_ncaa_forecasts.csv
 #
+# (On Windows) pull the latest version from top level directory with:
+# curl.exe --output 2022\data\fivethirtyeight_ncaa_forecasts.csv --url https://projects.fivethirtyeight.com/march-madness-api/2022/fivethirtyeight_ncaa_forecasts.csv
+#
 # Modifies the `Team` objects passed into this function to add: seeds, regions, slots, forecasts
 def load538Forecast(teams_lookup):
     path = '2022/data/fivethirtyeight_ncaa_forecasts.csv'
@@ -397,14 +400,11 @@ for gid in sorted_gids:
     else:
         games[next_gid].team2 = game.winner
 
-# TEMP : Catch up with todays games.
-games[28].winner = games[28].team1 # Kansas > Creighton
-games[26].winner = games[26].team1 # Michigan > Tennessee
-games[29].winner = games[29].team2 # Richmond < Providence
-#games[21].winner = games[21].team2 # St. Mary's < UCLA
+# TEMP : Catch up with today's games.
+#games[25].winner = games[25].team2 # Houston < Illinois
 
 n = 10000
-live_game = games[23] # Murray State vs. St. Peters
+live_game = games[25]
 for game_winner in [live_game.team1, live_game.team2]:
     live_game.winner = game_winner
 
