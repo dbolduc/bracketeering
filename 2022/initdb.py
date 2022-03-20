@@ -263,7 +263,7 @@ def bonusIndex(gid: int):
 
 # TODO : I think this method is associative
 # Returns total points
-def bracketCompare(b1: Bracket, b2: Bracket, streak_gids):
+def bracketCompare(b1: Bracket, b2: Bracket):
     # Game Points + Bonuses
     total_points = 0
     bonuses = {}
@@ -303,7 +303,7 @@ def bracketCompare(b1: Bracket, b2: Bracket, streak_gids):
 # returns h[bid] = [sum_2 wins, best bracket wins]
 #
 # TODO : generalize. Eventually I would want to operate on a "League" and compute all payouts.
-def MC(n: int, owners, streak_gids):
+def MC(n: int, owners, winner_f):
     # Initialize
     owner_sum_2_wins = {}
     owner_single_wins = {}
@@ -312,7 +312,7 @@ def MC(n: int, owners, streak_gids):
         owner_single_wins[owner_name] = 0.0
         
     for _ in range(n):
-        mc = generateBracket(games, sorted_gids, truthPlus538Compare)
+        mc = generateBracket(games, sorted_gids, winner_f)
         sum_2_owners = []
         sum_2_score = 0
         single_owners = []
@@ -320,7 +320,7 @@ def MC(n: int, owners, streak_gids):
 
         # Determine win shares
         for owner_name, owner in owners.items():
-            points = [bracketCompare(bracket, mc, streak_gids) for bracket in owner.brackets]
+            points = [bracketCompare(bracket, mc) for bracket in owner.brackets]
             points.sort(reverse=True)
             sum_2 = points[0] + points[1]
             single = points[0]
@@ -401,19 +401,43 @@ for gid in sorted_gids:
         games[next_gid].team2 = game.winner
 
 # TEMP : Catch up with today's games.
-#games[25].winner = games[25].team2 # Houston < Illinois
+games[25].winner = games[25].team1 # Houston > Illinois
+games[27].winner = games[27].team2 # Ohio State < Villanova
 
-n = 10000
-live_game = games[25]
-for game_winner in [live_game.team1, live_game.team2]:
-    live_game.winner = game_winner
+sim_gids = [19, 30]
+sims_per_scenario = 5000
+scenarios = 1 << len(sim_gids) # 2^|G|
+# Process sim_gids into a better form:
+sim_gids_lookup = {}
+for i, gid in enumerate(sim_gids):
+    sim_gids_lookup[gid] = i
 
-    sims = MC(n, owners, streak_gids)
-    print("IF %s WINS | n = %s" % (game_winner, n))
+# Loop over scenarios. the ith bit of scenario says who wins the ith game of sim_gids
+for scenario in range(scenarios):
+    # Define who wins
+    def f(game: Game) -> bool:
+        if game.gid in sim_gids_lookup:
+            i = sim_gids_lookup[game.gid]
+            return (scenario >> i) & 1 == 1
+        return truthPlus538Compare(game)
+    
+    # Run simulation
+    sims = MC(sims_per_scenario, owners, f)
+
+    # Print things nicely
+    scenario_winners = []
+    for i, gid in enumerate(sim_gids):
+        team1_wins = (scenario >> i) & 1 == 1
+        if team1_wins:
+            scenario_winners.append(str(games[gid].team1))
+        else:
+            scenario_winners.append(str(games[gid].team2))
+
+    print("IF", " AND ".join(scenario_winners), "WINS")
     print("Owner".ljust(10), "Sum of 2".ljust(10), "Best".ljust(10), "$$$".ljust(10))
     for owner in owners.values():
         sum_2 = sims[0][owner.name]
         single = sims[1][owner.name]
-        yuge = (sum_2 * 100 + single * 20) / n
+        yuge = (sum_2 * 100 + single * 20) / sims_per_scenario
         print(owner.name.ljust(10), str(round(sum_2, 2)).ljust(10), str(round(single, 2)).ljust(10), str(round(yuge, 2)).ljust(10))
     print()
