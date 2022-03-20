@@ -140,6 +140,11 @@ def prob538Compare(game: Game) -> bool:
     p1_wins = 1.0 / (1.0 + math.exp((r2-r1)*.175))
     return random.random() < p1_wins
 
+def truthPlus538Compare(game: Game) -> bool:
+    if game.winner:
+        return game.winner == game.team1
+    return prob538Compare(game)
+
 def generateBracket(games_src, sorted_gids, winner_f, bid: int = 0):
     bracket = Bracket(bid)
 
@@ -254,7 +259,7 @@ def bonusIndex(gid: int):
     return 4 * round + gid // pow(2, 4 - round) - 3 # Duh...
 
 # TODO : I think this method is associative
-# Returns [total points, initial streak]
+# Returns total points
 def bracketCompare(b1: Bracket, b2: Bracket, streak_gids):
     # Game Points + Bonuses
     total_points = 0
@@ -276,20 +281,8 @@ def bracketCompare(b1: Bracket, b2: Bracket, streak_gids):
     for bonus_achieved in bonuses.values():
         if bonus_achieved:
             total_points += 5
-
-    # Initial Streak
-    initial_streak = 0
-    for gid in streak_gids:
-        slot_index = gid - 1 # Slots are 0-indexed; Games are 1-indexed.
-        # TODO : I do not understand how, but these are different objects
-        # Let's compare team name
-        #if b1.slots[slot_index].winner == b2.slots[slot_index].winner:
-        if b1.slots[slot_index].winner.name == b2.slots[slot_index].winner.name:
-            initial_streak += 1
-        else:
-            break
     
-    return [total_points, initial_streak]
+    return total_points
 
 # TODO : Document more and better
 # TODO (with infinite time) : Turn this into a Dataproc job that can run in parallel.
@@ -304,46 +297,48 @@ def bracketCompare(b1: Bracket, b2: Bracket, streak_gids):
 #
 #
 # TODO : Return value is stale. But I probably want what the documentation says, not what the code says.
-# returns h[bid] = [best bracket wins, streak wins]
+# returns h[bid] = [sum_2 wins, best bracket wins]
 #
 # TODO : generalize. Eventually I would want to operate on a "League" and compute all payouts.
-def MC(n: int, brackets, streak_gids):
-    point_bucket = {}
-    streak_bucket = {}
-    for bracket in brackets:
-        point_bucket[bracket.bid] = 0.0
-        # TODO : For now we will just share the splits.
-        # The real rules will keep going until one remains.
-        streak_bucket[bracket.bid] = 0.0
-
+def MC(n: int, owners, streak_gids):
+    # Initialize
+    owner_sum_2_wins = {}
+    owner_single_wins = {}
+    for owner_name in owners.keys():
+        owner_sum_2_wins[owner_name] = 0.0
+        owner_single_wins[owner_name] = 0.0
+        
     for _ in range(n):
-        mc = generateBracket(games, sorted_gids, prob538Compare)
-        max_points = 0
-        max_points_bids = []
-        max_streak = 0
-        max_streak_bids = []
-        for bracket in brackets:
-            points, streak = bracketCompare(bracket, mc, streak_gids)
-            if points > max_points:
-                max_points = points
-                max_points_bids = [bracket.bid]
-            elif points == max_points:
-                max_points_bids.append(bracket.bid)
-            if streak > max_streak:
-                max_streak = streak
-                max_streak_bids = [bracket.bid]
-            elif streak == max_streak:
-                max_streak_bids.append(bracket.bid)
+        mc = generateBracket(games, sorted_gids, truthPlus538Compare)
+        sum_2_owners = []
+        sum_2_score = 0
+        single_owners = []
+        single_score = 0
 
-        # Accumulate results into buckets
-        point_sharers = len(max_points_bids)
-        for bid in max_points_bids:
-            point_bucket[bid] += 1.0 / point_sharers
-        streak_sharers = len(max_streak_bids)
-        for bid in max_streak_bids:
-            streak_bucket[bid] += 1.0 / streak_sharers
-    
-    return [point_bucket, streak_bucket]
+        # Determine win shares
+        for owner_name, owner in owners.items():
+            points = [bracketCompare(bracket, mc, streak_gids) for bracket in owner.brackets]
+            points.sort(reverse=True)
+            sum_2 = points[0] + points[1]
+            single = points[0]
+            if sum_2 > sum_2_score:
+                sum_2_score = sum_2
+                sum_2_owners = [owner_name]
+            elif sum_2 == sum_2_score:
+                sum_2_owners.append(owner_name)
+            if single > single_score:
+                single_score = single
+                single_owners = [owner_name]
+            elif single == single_score:
+                single_owners.append(owner_name)
+        
+        # Accumulate
+        for sum_2_winner in sum_2_owners:
+            owner_sum_2_wins[sum_2_winner] += 1.0 / len(sum_2_owners)
+        for single_winner in single_owners:
+            owner_single_wins[single_winner] += 1.0 / len(single_owners)
+        
+    return [owner_sum_2_wins, owner_single_wins]
         
 
     
@@ -356,8 +351,6 @@ games = loadGames(teams)
 sorted_gids = sorted(games.keys(), reverse=True)
 streak_gids = loadStreak()
 chalk = generateBracket(games, sorted_gids, chalkCompare)
-#anti_chalk = generateBracket(games, sorted_gids, antiChalkCompare)
-#absolute_538 = generateBracket(games, sorted_gids, absolute538Compare)
 
 # ======== Loading Brackets ============
 
@@ -384,21 +377,43 @@ if kGenerateCheatSheets:
 
 owners = loadDraft(brackets)
 
-for owner in owners.values():
-    print(owner.name)
-    for bracket in owner.brackets:
-        team = bracket.slots[-4].winner
-        print("Bracket %s Winner: %s | Depth: %s" % (bracket.bid, team.name, bracket.teamDepth(team)))
+# Catch up with the games that have happened
+for gid in sorted_gids:
+    game = games[gid]
+    if not game.team1 or not game.team2:
+        continue
+    if game.team1.forecast[game.round] == 1:
+        game.winner = game.team1
+    if game.team2.forecast[game.round] == 1:
+        game.winner = game.team2
+    
+    # Propogate the winning team to the next round, unless this is the final game.
+    if gid == 1:
+        continue
+    next_gid = gid // 2
+    is_next_team1 = gid % 2 == 0
+    if is_next_team1:
+        games[next_gid].team1 = game.winner
+    else:
+        games[next_gid].team2 = game.winner
+
+# TEMP : Catch up with todays games.
+games[28].winner = games[28].team1 # Kansas > Creighton
+games[26].winner = games[26].team1 # Michigan > Tennessee
+games[29].winner = games[29].team2 # Richmond < Providence
+#games[21].winner = games[21].team2 # St. Mary's < UCLA
+
+n = 10000
+live_game = games[23] # Murray State vs. St. Peters
+for game_winner in [live_game.team1, live_game.team2]:
+    live_game.winner = game_winner
+
+    sims = MC(n, owners, streak_gids)
+    print("IF %s WINS | n = %s" % (game_winner, n))
+    print("Owner".ljust(10), "Sum of 2".ljust(10), "Best".ljust(10), "$$$".ljust(10))
+    for owner in owners.values():
+        sum_2 = sims[0][owner.name]
+        single = sims[1][owner.name]
+        yuge = (sum_2 * 100 + single * 20) / n
+        print(owner.name.ljust(10), str(round(sum_2, 2)).ljust(10), str(round(single, 2)).ljust(10), str(round(yuge, 2)).ljust(10))
     print()
-
-#x = bracketCompare(brackets[1], brackets[1])
-#print(x)
-#x = bracketCompare(brackets[1], brackets[2])
-#print(x)
-
-#x = MC(10000, brackets, streak_gids)
-#print("\n\n")
-#print("Points: ", x[0])
-#print("\n\n")
-#print("Streaks: ", x[1])
-
