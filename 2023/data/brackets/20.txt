@@ -1,0 +1,68 @@
+20
+1,Texas
+2,Duke
+3,Texas
+4,Arizona
+5,Duke
+6,Texas
+7,Saint Mary's (CA)
+8,San Diego State
+9,Arizona
+10,Duke
+11,Kentucky
+12,Indiana
+13,Texas
+14,Saint Mary's (CA)
+15,Gonzaga
+16,Maryland
+17,San Diego State
+18,Baylor
+19,Arizona
+20,Purdue
+21,Duke
+22,Kentucky
+23,Michigan State
+24,Houston
+25,Indiana
+26,Xavier
+27,Texas
+28,Illinois
+29,Saint Mary's (CA)
+30,Gonzaga
+31,UCLA
+32,Alabama
+33,Maryland
+34,San Diego State
+35,Virginia
+36,Creighton
+37,Baylor
+38,Utah State
+39,Arizona
+40,Purdue
+41,Memphis
+42,Duke
+43,Tennessee
+44,Kentucky
+45,Kansas State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Auburn
+50,Miami (FL)
+51,Indiana
+52,Pittsburgh
+53,Xavier
+54,Texas A&M
+55,Texas
+56,Kansas
+57,Illinois
+58,Saint Mary's (CA)
+59,Connecticut
+60,Texas Christian
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Pittsburgh
+121,Arizona State

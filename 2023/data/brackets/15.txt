@@ -1,0 +1,68 @@
+15
+1,Houston
+2,Michigan State
+3,Houston
+4,College of Charleston
+5,Michigan State
+6,Houston
+7,Gonzaga
+8,College of Charleston
+9,Utah State
+10,Purdue
+11,Michigan State
+12,Houston
+13,Texas
+14,Connecticut
+15,Gonzaga
+16,Maryland
+17,College of Charleston
+18,Baylor
+19,Utah State
+20,Purdue
+21,Tennessee
+22,Kentucky
+23,Michigan State
+24,Houston
+25,Indiana
+26,Pittsburgh
+27,Texas
+28,Illinois
+29,Connecticut
+30,Gonzaga
+31,Boise State
+32,Alabama
+33,Maryland
+34,College of Charleston
+35,Virginia
+36,Creighton
+37,Baylor
+38,Utah State
+39,Arizona
+40,Purdue
+41,Florida Atlantic
+42,Oral Roberts
+43,Tennessee
+44,Kentucky
+45,Kansas State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Iowa
+50,Miami (FL)
+51,Indiana
+52,Pittsburgh
+53,Xavier
+54,Texas A&M
+55,Texas
+56,Kansas
+57,Illinois
+58,Virginia Commonwealth
+59,Connecticut
+60,Nevada
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Fairleigh Dickinson
+105,Pittsburgh
+121,Nevada

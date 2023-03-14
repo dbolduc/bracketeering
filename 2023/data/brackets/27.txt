@@ -1,0 +1,68 @@
+27
+1,Marquette
+2,Marquette
+3,Texas A&M
+4,Baylor
+5,Marquette
+6,Texas A&M
+7,Connecticut
+8,San Diego State
+9,Baylor
+10,Tennessee
+11,Marquette
+12,Auburn
+13,Texas A&M
+14,Connecticut
+15,Gonzaga
+16,Alabama
+17,San Diego State
+18,Baylor
+19,Utah State
+20,Purdue
+21,Tennessee
+22,Providence
+23,Marquette
+24,Auburn
+25,Indiana
+26,Iowa State
+27,Texas A&M
+28,Kansas
+29,Connecticut
+30,Gonzaga
+31,Boise State
+32,Alabama
+33,West Virginia
+34,San Diego State
+35,Virginia
+36,Creighton
+37,Baylor
+38,Utah State
+39,Princeton
+40,Purdue
+41,Memphis
+42,Duke
+43,Tennessee
+44,Providence
+45,Kansas State
+46,Southern California
+47,Marquette
+48,Houston
+49,Auburn
+50,Miami (FL)
+51,Indiana
+52,Iowa State
+53,Xavier
+54,Texas A&M
+55,Colgate
+56,Kansas
+57,Illinois
+58,Virginia Commonwealth
+59,Connecticut
+60,Texas Christian
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Pittsburgh
+121,Nevada

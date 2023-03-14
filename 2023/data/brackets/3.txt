@@ -1,0 +1,68 @@
+3
+1,Houston
+2,Alabama
+3,Houston
+4,Alabama
+5,Southern California
+6,Houston
+7,Arizona State
+8,Alabama
+9,Baylor
+10,Tennessee
+11,Southern California
+12,Houston
+13,Texas
+14,Connecticut
+15,Arizona State
+16,Alabama
+17,San Diego State
+18,Baylor
+19,Missouri
+20,Purdue
+21,Tennessee
+22,Montana State
+23,Southern California
+24,Houston
+25,Miami (FL)
+26,Pittsburgh
+27,Texas
+28,Arkansas
+29,Connecticut
+30,Arizona State
+31,UCLA
+32,Alabama
+33,West Virginia
+34,San Diego State
+35,Furman
+36,Creighton
+37,Baylor
+38,Missouri
+39,Princeton
+40,Purdue
+41,Florida Atlantic
+42,Duke
+43,Tennessee
+44,Providence
+45,Montana State
+46,Southern California
+47,Marquette
+48,Houston
+49,Iowa
+50,Miami (FL)
+51,Indiana
+52,Pittsburgh
+53,Xavier
+54,Texas A&M
+55,Texas
+56,Kansas
+57,Arkansas
+58,Virginia Commonwealth
+59,Connecticut
+60,Arizona State
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Pittsburgh
+121,Arizona State

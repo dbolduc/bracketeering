@@ -1,0 +1,68 @@
+22
+1,Kentucky
+2,Kentucky
+3,Kansas
+4,San Diego State
+5,Kentucky
+6,Auburn
+7,Kansas
+8,San Diego State
+9,Baylor
+10,Louisiana-Lafayette
+11,Kentucky
+12,Auburn
+13,Texas
+14,Kansas
+15,Gonzaga
+16,Alabama
+17,San Diego State
+18,Baylor
+19,Utah State
+20,Florida Atlantic
+21,Louisiana-Lafayette
+22,Kentucky
+23,Michigan State
+24,Auburn
+25,Indiana
+26,Mississippi State
+27,Texas
+28,Kansas
+29,Saint Mary's (CA)
+30,Gonzaga
+31,Boise State
+32,Alabama
+33,Maryland
+34,San Diego State
+35,Furman
+36,Creighton
+37,Baylor
+38,Utah State
+39,Princeton
+40,Purdue
+41,Florida Atlantic
+42,Duke
+43,Louisiana-Lafayette
+44,Kentucky
+45,Kansas State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Auburn
+50,Miami (FL)
+51,Indiana
+52,Mississippi State
+53,Kennesaw State
+54,Penn State
+55,Texas
+56,Kansas
+57,Arkansas
+58,Saint Mary's (CA)
+59,Connecticut
+60,Texas Christian
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Southeast Missouri State
+81,Fairleigh Dickinson
+105,Mississippi State
+121,Arizona State

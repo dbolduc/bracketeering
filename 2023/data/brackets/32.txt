@@ -1,0 +1,68 @@
+32
+1,Alabama
+2,Alabama
+3,UCLA
+4,Alabama
+5,Purdue
+6,Houston
+7,UCLA
+8,Alabama
+9,North Carolina State
+10,Purdue
+11,Kentucky
+12,Houston
+13,Texas
+14,Kansas
+15,UCLA
+16,Alabama
+17,San Diego State
+18,North Carolina State
+19,Arizona
+20,Purdue
+21,Oral Roberts
+22,Kentucky
+23,Marquette
+24,Houston
+25,Kent State
+26,Xavier
+27,Texas
+28,Kansas
+29,Connecticut
+30,Gonzaga
+31,UCLA
+32,Alabama
+33,West Virginia
+34,San Diego State
+35,Furman
+36,North Carolina State
+37,UC-Santa Barbara
+38,Utah State
+39,Arizona
+40,Purdue
+41,Memphis
+42,Oral Roberts
+43,Tennessee
+44,Kentucky
+45,Montana State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Auburn
+50,Miami (FL)
+51,Kent State
+52,Pittsburgh
+53,Xavier
+54,Penn State
+55,Texas
+56,Kansas
+57,Arkansas
+58,Saint Mary's (CA)
+59,Connecticut
+60,Texas Christian
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Pittsburgh
+121,Nevada

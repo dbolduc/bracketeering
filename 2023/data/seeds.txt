@@ -1,0 +1,70 @@
+# Overall seed is implied by the ordering. This file was handwritten.
+# Source: cbssports.com/college-basketball/news/march-madness-2023-committee-reveals-official-ncaa-tournament-bracket-seed-list-from-1-68/
+Alabama
+Houston
+Kansas
+Purdue
+UCLA
+Texas
+Arizona
+Marquette
+Baylor
+Gonzaga
+Kansas State
+Xavier
+Connecticut
+Tennessee
+Indiana
+Virginia
+San Diego State
+Duke
+Saint Mary's (CA)
+Miami (FL)
+Iowa State
+Creighton
+Kentucky
+Texas Christian
+Texas A&M
+Michigan State
+Missouri
+Northwestern
+Memphis
+Arkansas
+Maryland
+Iowa
+Florida Atlantic
+West Virginia
+Auburn
+Illinois
+Boise State
+Penn State
+Southern California
+Utah State
+North Carolina State
+Providence
+Mississippi State
+Pittsburgh
+Arizona State
+Nevada
+College of Charleston
+Oral Roberts
+Drake
+Virginia Commonwealth
+Kent State
+Iona
+Furman
+Louisiana-Lafayette
+Kennesaw State
+UC-Santa Barbara
+Grand Canyon
+Montana State
+Vermont
+Colgate
+Princeton
+North Carolina-Asheville
+Northern Kentucky
+Howard
+Texas A&M-Corpus Christi
+Texas Southern
+Southeast Missouri State
+Fairleigh Dickinson

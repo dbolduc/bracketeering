@@ -1,0 +1,68 @@
+8
+1,Houston
+2,Alabama
+3,Houston
+4,Alabama
+5,Kentucky
+6,Houston
+7,Gonzaga
+8,Alabama
+9,Baylor
+10,Duke
+11,Kentucky
+12,Houston
+13,Penn State
+14,Connecticut
+15,Gonzaga
+16,Alabama
+17,Virginia
+18,Baylor
+19,Utah State
+20,Purdue
+21,Duke
+22,Kentucky
+23,Michigan State
+24,Houston
+25,Kent State
+26,Pittsburgh
+27,Penn State
+28,Illinois
+29,Connecticut
+30,Gonzaga
+31,UCLA
+32,Alabama
+33,West Virginia
+34,San Diego State
+35,Virginia
+36,North Carolina State
+37,Baylor
+38,Utah State
+39,Arizona
+40,Purdue
+41,Memphis
+42,Duke
+43,Tennessee
+44,Kentucky
+45,Kansas State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Auburn
+50,Drake
+51,Kent State
+52,Pittsburgh
+53,Kennesaw State
+54,Penn State
+55,Texas
+56,Kansas
+57,Illinois
+58,Saint Mary's (CA)
+59,Connecticut
+60,Nevada
+61,Gonzaga
+62,Northwestern
+63,UCLA
+65,Southeast Missouri State
+81,Fairleigh Dickinson
+105,Pittsburgh
+121,Nevada

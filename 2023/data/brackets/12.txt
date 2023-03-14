@@ -1,0 +1,68 @@
+12
+1,Kansas
+2,Alabama
+3,Kansas
+4,Alabama
+5,Tennessee
+6,Houston
+7,Kansas
+8,Alabama
+9,North Carolina State
+10,Tennessee
+11,Kansas State
+12,Houston
+13,Texas
+14,Kansas
+15,Boise State
+16,Alabama
+17,San Diego State
+18,North Carolina State
+19,Arizona
+20,Purdue
+21,Tennessee
+22,Kansas State
+23,Michigan State
+24,Houston
+25,Indiana
+26,Xavier
+27,Texas
+28,Kansas
+29,Connecticut
+30,Texas Christian
+31,Boise State
+32,Alabama
+33,West Virginia
+34,San Diego State
+35,Furman
+36,North Carolina State
+37,Baylor
+38,Missouri
+39,Arizona
+40,Purdue
+41,Memphis
+42,Oral Roberts
+43,Tennessee
+44,Kentucky
+45,Kansas State
+46,Michigan State
+47,Vermont
+48,Houston
+49,Iowa
+50,Miami (FL)
+51,Indiana
+52,Iowa State
+53,Xavier
+54,Penn State
+55,Texas
+56,Kansas
+57,Illinois
+58,Saint Mary's (CA)
+59,Connecticut
+60,Texas Christian
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Mississippi State
+121,Arizona State

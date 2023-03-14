@@ -1,0 +1,68 @@
+7
+1,Purdue
+2,Purdue
+3,Houston
+4,Alabama
+5,Purdue
+6,Houston
+7,Saint Mary's (CA)
+8,Alabama
+9,Arizona
+10,Purdue
+11,Kansas State
+12,Houston
+13,Texas A&M
+14,Saint Mary's (CA)
+15,Gonzaga
+16,Alabama
+17,San Diego State
+18,Creighton
+19,Arizona
+20,Purdue
+21,Duke
+22,Kansas State
+23,Marquette
+24,Houston
+25,Indiana
+26,Iowa State
+27,Texas A&M
+28,Illinois
+29,Saint Mary's (CA)
+30,Gonzaga
+31,UCLA
+32,Alabama
+33,West Virginia
+34,San Diego State
+35,Furman
+36,Creighton
+37,Baylor
+38,Missouri
+39,Arizona
+40,Purdue
+41,Memphis
+42,Duke
+43,Tennessee
+44,Kentucky
+45,Kansas State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Auburn
+50,Drake
+51,Indiana
+52,Iowa State
+53,Xavier
+54,Texas A&M
+55,Texas
+56,Kansas
+57,Illinois
+58,Saint Mary's (CA)
+59,Connecticut
+60,Arizona State
+61,Gonzaga
+62,Northwestern
+63,UCLA
+65,Southeast Missouri State
+81,Texas Southern
+105,Pittsburgh
+121,Arizona State

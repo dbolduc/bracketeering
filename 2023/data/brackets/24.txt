@@ -1,0 +1,68 @@
+24
+1,Alabama
+2,Alabama
+3,Indiana
+4,Alabama
+5,Providence
+6,Indiana
+7,UCLA
+8,Alabama
+9,Arizona
+10,Duke
+11,Providence
+12,Indiana
+13,Texas
+14,Connecticut
+15,UCLA
+16,Alabama
+17,Virginia
+18,Baylor
+19,Arizona
+20,Florida Atlantic
+21,Duke
+22,Providence
+23,Marquette
+24,Houston
+25,Indiana
+26,Mississippi State
+27,Texas
+28,Arkansas
+29,Connecticut
+30,Gonzaga
+31,UCLA
+32,Alabama
+33,West Virginia
+34,College of Charleston
+35,Virginia
+36,Creighton
+37,Baylor
+38,Utah State
+39,Arizona
+40,Purdue
+41,Florida Atlantic
+42,Duke
+43,Tennessee
+44,Providence
+45,Kansas State
+46,Southern California
+47,Marquette
+48,Houston
+49,Auburn
+50,Miami (FL)
+51,Indiana
+52,Mississippi State
+53,Kennesaw State
+54,Texas A&M
+55,Texas
+56,Kansas
+57,Arkansas
+58,Saint Mary's (CA)
+59,Connecticut
+60,Texas Christian
+61,Gonzaga
+62,Northwestern
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Mississippi State
+121,Nevada

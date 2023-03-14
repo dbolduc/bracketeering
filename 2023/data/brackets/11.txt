@@ -1,0 +1,68 @@
+11
+1,Houston
+2,Duke
+3,Houston
+4,West Virginia
+5,Duke
+6,Houston
+7,Gonzaga
+8,West Virginia
+9,Arizona
+10,Duke
+11,Marquette
+12,Houston
+13,Xavier
+14,Kansas
+15,Gonzaga
+16,West Virginia
+17,Virginia
+18,Creighton
+19,Arizona
+20,Florida Atlantic
+21,Duke
+22,Providence
+23,Marquette
+24,Houston
+25,Indiana
+26,Xavier
+27,Penn State
+28,Kansas
+29,Saint Mary's (CA)
+30,Gonzaga
+31,Northwestern
+32,Alabama
+33,West Virginia
+34,College of Charleston
+35,Virginia
+36,Creighton
+37,Baylor
+38,Missouri
+39,Arizona
+40,Purdue
+41,Florida Atlantic
+42,Duke
+43,Tennessee
+44,Providence
+45,Kansas State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Iowa
+50,Drake
+51,Indiana
+52,Iowa State
+53,Xavier
+54,Penn State
+55,Texas
+56,Kansas
+57,Arkansas
+58,Saint Mary's (CA)
+59,Connecticut
+60,Texas Christian
+61,Gonzaga
+62,Northwestern
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Mississippi State
+121,Arizona State

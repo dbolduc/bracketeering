@@ -1,0 +1,68 @@
+26
+1,Kentucky
+2,Kentucky
+3,UCLA
+4,Baylor
+5,Kentucky
+6,Indiana
+7,UCLA
+8,San Diego State
+9,Baylor
+10,Memphis
+11,Kentucky
+12,Indiana
+13,Xavier
+14,Kansas
+15,UCLA
+16,Maryland
+17,San Diego State
+18,Baylor
+19,Arizona
+20,Memphis
+21,Duke
+22,Kentucky
+23,Michigan State
+24,Houston
+25,Indiana
+26,Xavier
+27,Texas
+28,Kansas
+29,Connecticut
+30,Arizona State
+31,UCLA
+32,Alabama
+33,Maryland
+34,San Diego State
+35,Virginia
+36,Creighton
+37,Baylor
+38,Missouri
+39,Arizona
+40,Purdue
+41,Memphis
+42,Duke
+43,Tennessee
+44,Kentucky
+45,Kansas State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Auburn
+50,Drake
+51,Indiana
+52,Iowa State
+53,Xavier
+54,Penn State
+55,Texas
+56,Kansas
+57,Arkansas
+58,Virginia Commonwealth
+59,Connecticut
+60,Arizona State
+61,Gonzaga
+62,Northwestern
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Fairleigh Dickinson
+105,Pittsburgh
+121,Arizona State

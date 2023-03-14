@@ -1,0 +1,68 @@
+30
+1,UCLA
+2,Marquette
+3,UCLA
+4,Arizona
+5,Marquette
+6,Drake
+7,UCLA
+8,Maryland
+9,Arizona
+10,Florida Atlantic
+11,Marquette
+12,Drake
+13,Texas A&M
+14,Kansas
+15,UCLA
+16,Maryland
+17,Virginia
+18,Baylor
+19,Arizona
+20,Florida Atlantic
+21,Tennessee
+22,Providence
+23,Marquette
+24,Auburn
+25,Drake
+26,Iowa State
+27,Texas A&M
+28,Kansas
+29,Connecticut
+30,Nevada
+31,UCLA
+32,Alabama
+33,Maryland
+34,San Diego State
+35,Virginia
+36,North Carolina State
+37,Baylor
+38,Utah State
+39,Arizona
+40,Purdue
+41,Florida Atlantic
+42,Duke
+43,Tennessee
+44,Providence
+45,Kansas State
+46,Southern California
+47,Marquette
+48,Houston
+49,Auburn
+50,Drake
+51,Kent State
+52,Iowa State
+53,Kennesaw State
+54,Texas A&M
+55,Texas
+56,Kansas
+57,Arkansas
+58,Virginia Commonwealth
+59,Connecticut
+60,Nevada
+61,Gonzaga
+62,Northwestern
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Mississippi State
+121,Nevada

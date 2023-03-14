@@ -1,0 +1,68 @@
+19
+1,Gonzaga
+2,Alabama
+3,Gonzaga
+4,Alabama
+5,Purdue
+6,Houston
+7,Gonzaga
+8,Alabama
+9,Creighton
+10,Purdue
+11,Marquette
+12,Houston
+13,Iowa State
+14,Kansas
+15,Gonzaga
+16,Alabama
+17,Virginia
+18,Creighton
+19,Arizona
+20,Purdue
+21,Oral Roberts
+22,Kentucky
+23,Marquette
+24,Houston
+25,Drake
+26,Iowa State
+27,Texas
+28,Kansas
+29,Iona
+30,Gonzaga
+31,UCLA
+32,Alabama
+33,Maryland
+34,San Diego State
+35,Virginia
+36,Creighton
+37,Baylor
+38,Missouri
+39,Arizona
+40,Purdue
+41,Memphis
+42,Oral Roberts
+43,Tennessee
+44,Kentucky
+45,Montana State
+46,Michigan State
+47,Marquette
+48,Houston
+49,Iowa
+50,Drake
+51,Indiana
+52,Iowa State
+53,Xavier
+54,Penn State
+55,Texas
+56,Kansas
+57,Illinois
+58,Virginia Commonwealth
+59,Iona
+60,Texas Christian
+61,Gonzaga
+62,Northwestern
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Mississippi State
+121,Arizona State

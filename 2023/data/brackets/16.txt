@@ -1,0 +1,68 @@
+16
+1,Auburn
+2,Baylor
+3,Auburn
+4,Baylor
+5,Purdue
+6,Auburn
+7,UCLA
+8,West Virginia
+9,Baylor
+10,Purdue
+11,Kansas State
+12,Auburn
+13,Texas A&M
+14,Connecticut
+15,UCLA
+16,West Virginia
+17,San Diego State
+18,Baylor
+19,Princeton
+20,Purdue
+21,Duke
+22,Kansas State
+23,Marquette
+24,Auburn
+25,Kent State
+26,Xavier
+27,Texas A&M
+28,Kansas
+29,Connecticut
+30,Gonzaga
+31,UCLA
+32,Alabama
+33,West Virginia
+34,San Diego State
+35,Virginia
+36,Creighton
+37,Baylor
+38,Utah State
+39,Princeton
+40,Purdue
+41,Florida Atlantic
+42,Duke
+43,Tennessee
+44,Providence
+45,Kansas State
+46,Michigan State
+47,Marquette
+48,Northern Kentucky
+49,Auburn
+50,Drake
+51,Kent State
+52,Iowa State
+53,Xavier
+54,Texas A&M
+55,Texas
+56,Kansas
+57,Arkansas
+58,Saint Mary's (CA)
+59,Connecticut
+60,Texas Christian
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Fairleigh Dickinson
+105,Mississippi State
+121,Arizona State

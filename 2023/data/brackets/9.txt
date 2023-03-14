@@ -1,0 +1,68 @@
+9
+1,Creighton
+2,Creighton
+3,Texas
+4,Creighton
+5,Marquette
+6,Texas
+7,Connecticut
+8,Alabama
+9,Creighton
+10,Memphis
+11,Marquette
+12,Houston
+13,Texas
+14,Connecticut
+15,Gonzaga
+16,Alabama
+17,San Diego State
+18,Creighton
+19,Arizona
+20,Memphis
+21,Tennessee
+22,Kentucky
+23,Marquette
+24,Houston
+25,Drake
+26,Xavier
+27,Texas
+28,Arkansas
+29,Connecticut
+30,Gonzaga
+31,UCLA
+32,Alabama
+33,West Virginia
+34,San Diego State
+35,Furman
+36,Creighton
+37,UC-Santa Barbara
+38,Utah State
+39,Arizona
+40,Purdue
+41,Memphis
+42,Duke
+43,Tennessee
+44,Kentucky
+45,Kansas State
+46,Southern California
+47,Marquette
+48,Houston
+49,Auburn
+50,Drake
+51,Indiana
+52,Iowa State
+53,Xavier
+54,Texas A&M
+55,Texas
+56,Kansas
+57,Arkansas
+58,Virginia Commonwealth
+59,Connecticut
+60,Nevada
+61,Gonzaga
+62,Boise State
+63,UCLA
+65,Texas A&M-Corpus Christi
+81,Texas Southern
+105,Pittsburgh
+121,Nevada
