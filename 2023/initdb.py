@@ -220,7 +220,7 @@ def writeCheatSheet(brackets, streak_gids):
 def writeSortableCheatSheet(brackets, streak_gids):
     path = "2023/data/sortable_cheat_sheet.csv"
     with open(path, "w+") as file:
-        file.write("ID,Chalk Score,538 Score,HEAT Score,Winner,Runner Up,Purdue Depth,UVA Depth,UCLA Depth,VCU Depth\n")
+        file.write("ID,Chalk Score,538 Score,HEAT Score,Winner,Runner Up,Purdue Depth,UVA Depth,UCLA Depth,IU Depth\n")
         for bracket in brackets:
             str_chalk = str(round(bracket.calcChalkScore(chalk), 2))
             str_538 = str(round(bracket.calc538Score(), 2))
@@ -228,8 +228,9 @@ def writeSortableCheatSheet(brackets, streak_gids):
             purdue = bracket.teamDepth(teams_lookup["Purdue"], True)
             uva = bracket.teamDepth(teams_lookup["Virginia"], True)
             #vt = bracket.teamDepth(teams_lookup["Virginia Tech"], True)
-            vcu = bracket.teamDepth(teams_lookup["Virginia Commonwealth"], True)
             ucla = bracket.teamDepth(teams_lookup["UCLA"], True)
+            #vcu = bracket.teamDepth(teams_lookup["Virginia Commonwealth"], True)
+            iu = bracket.teamDepth(teams_lookup["Indiana"], True)
 
             # Extract the winners from the Elite Eight and on...
             # I will just order the top 7 teams in a list with no repeats
@@ -243,7 +244,7 @@ def writeSortableCheatSheet(brackets, streak_gids):
                 ordered.append(str(slot.winner))
 
             # Write the information to the file
-            file.write("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (str(bracket.bid), str_chalk, str_538, str_heat, ordered[0], ordered[1], purdue, uva, ucla, vcu))
+            file.write("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (str(bracket.bid), str_chalk, str_538, str_heat, ordered[0], ordered[1], purdue, uva, ucla, iu))
 
 # ======== Monte Carlo Simulation ============
 
@@ -366,6 +367,7 @@ def eliteEightBonus(truth: Bracket, owners):
                     ee[-1] += 1
         ee.sort()
         h[o] = [ee[3], ee[0], ee[2], ee[1]]
+        # DEBUG ONLY
         print(o, h[o])
     
     owner_set = set(owners.keys())
@@ -455,7 +457,7 @@ streak_gids = loadStreak()
 # TODO : Consider unfactoring the generation into a dedicated method (for cleanliness)
 brackets = []
 kGenerateBrackets = False
-kGenerateCheatSheets = True
+kGenerateCheatSheets = False
 kBracketsPerOwner = 4
 kNumOwners = 8
 kTotalBrackets = kBracketsPerOwner * kNumOwners
@@ -472,8 +474,23 @@ if kGenerateCheatSheets:
     writeCheatSheet(brackets, streak_gids)
     writeSortableCheatSheet(brackets, streak_gids)
 
-# Don't proceed if have not done the draft yet.
-exit(0)
+# TODO : move out, accept arguments instead of globals.
+# MonteCarlo sim to see which bracket is best
+def preDraftSim():
+    dern_bids = {}
+    for i in range(kTotalBrackets):
+        dern_bids[i+1] = 0
+    for i in range(50000*4):
+        mc = generateBracket(games, sorted_gids, truthPlus538Compare)
+        max_pts = 0
+        max_streak = 0
+        pts_ids = [[bracketCompare(mc, b), b.bid] for b in brackets]
+        pts_ids.sort(reverse=True)
+        best_bid = pts_ids[0][1]
+        dern_bids[best_bid] +=1
+        if i % 1000 == 0:
+            print(i)
+    print(dern_bids)
 
 owners = loadDraft(brackets)
 
@@ -502,14 +519,29 @@ elite_eight_shares = {}
 for o in owners:
     elite_eight_shares[o] = [0.0, 0.0] # [total, weighted]
 
-games[11].winner = games[11].team2   # Purdue < St. Peter's
-games[14].winner = games[14].team1   # Kansas > Providence
-games[10].winner = games[10].team1   # UNC > UCLA
-games[15].winner = games[15].team2   # ISU > Miami
+# Set today's winners that 538 does not know about.
+#games[8].winner = games[8].team2   # Alabama < SDSU
 
-sim_gids = [7,6,5,4,3,2,1]
-sims_per_scenario = 1 #5000
-scenarios = 1 << len(sim_gids) # 2^|G|
+# Type of sim
+kMonteCarlo = True
+kEliteEight = False
+kExhaustive = False
+
+# A MC sim, for when there are too many possibilities to simulate them all.
+if kMonteCarlo:
+    sim_gids = [4]
+    scenarios = 1 << len(sim_gids) # 2^|G|
+    sims_per_scenario = 10000 // scenarios  
+    fixed_winners = []
+
+# An exhaustive sim over the Elite Eight games, and on. (128 possibilities).
+if kExhaustive or kEliteEight:
+    sim_gids = [7,6,5,4,3,2,1]
+    sim_gids = [4,6,2,3,1]
+    scenarios = 1 << len(sim_gids) # 2^|G|
+    sims_per_scenario = 1
+    fixed_winners = []
+
 # Process sim_gids into a better form:
 sim_gids_lookup = {}
 for i, gid in enumerate(sim_gids):
@@ -519,35 +551,39 @@ for i, gid in enumerate(sim_gids):
 for scenario in range(scenarios):
     # Define who wins
     def f(game: Game) -> bool:
+        # Fixed winners allows for us to run a sim, assuming a given team wins the tourney.
+        # The order of the list matters. We assume the first team will win the tourney, the
+        # second team will win every game until it plays the first team. Etc.
+        for team in fixed_winners:
+            if game.team1.name == team:
+                return True
+            if game.team2.name == team:
+                return False
+
+        # the ith bit of scenario says who wins the ith game of sim_gids
         if game.gid in sim_gids_lookup:
             i = sim_gids_lookup[game.gid]
             return (scenario >> i) & 1 == 1
         return truthPlus538Compare(game)
     
     # Run simulation
-    #sims = MC(sims_per_scenario, owners, f)
+    sims = MC(sims_per_scenario, owners, f)
 
     # Determine raw probability of this happening
     p = 1.0
-    for i, gid in enumerate(sim_gids):
-        game = games[gid]
-
-
-        # TODO : Would want to just look at the mc bracket's slots[2*n] and slots[2*n+1]
-        # DEBUG
-        p = 1/128
-        continue
-
-
-
-        r1 = game.team1.rating
-        r2 = game.team2.rating
-        p1_wins = 1.0 / (1.0 + math.exp((r2-r1)*.175))
-        team1_wins = (scenario >> i) & 1 == 1
-        if team1_wins:
-            p *= p1_wins
-        else:
-            p *= (1.0 - p1_wins)
+    if kExhaustive:
+        p = 1.0 / scenarios
+    else:
+        for i, gid in enumerate(sim_gids):
+            game = games[gid]
+            r1 = game.team1.rating
+            r2 = game.team2.rating
+            p1_wins = 1.0 / (1.0 + math.exp((r2-r1)*.175))
+            team1_wins = (scenario >> i) & 1 == 1
+            if team1_wins:
+                p *= p1_wins
+            else:
+                p *= (1.0 - p1_wins)
 
     # Print things nicely
     # TODO : Calculate probability of scenario happening?
@@ -559,38 +595,45 @@ for scenario in range(scenarios):
         else:
             scenario_winners.append(str(games[gid].team2))
 
-    #print("IF", " AND ".join(scenario_winners), "(p=%s)" % (str(round(p, 5))))
-    # DEBUG : Elite Eight : regenerate bracket
-    mc = generateBracket(games, sorted_gids, f)
-    #ee = eliteEightBonus(mc, owners)
-    #ee_winner_str = "|".join([w for w in ee])
-    #print(",".join([ee_winner_str, str(p)] + scenario_winners))
+    if kMonteCarlo:
+        print("IF", " AND ".join(scenario_winners), "(p=%s)" % (str(round(p, 5))))
 
-    mc_winners = [str(mc.slots[i-1].winner) for i in sim_gids]
-    sum_2 = sumOf2Bonus(mc, owners)
-    sum_2_winners = "|".join(["%s: %s+%s" % (o, v[0], v[1]) for o, v in sum_2.items()])
-    single = singleBonus(mc, owners)
-    single_winners = "|".join(["%s: %s" % (o, v) for o, v in single.items()])
-    print(",".join([sum_2_winners, single_winners, str(p)] + mc_winners))
+    if kEliteEight or kExhaustive:
+        mc = generateBracket(games, sorted_gids, f)
 
-    #for o in ee:
-    #    elite_eight_shares[o][0] += 1.0 / len(ee)
-    #    elite_eight_shares[o][1] += p / len(ee)
-    #print("")
-    continue
+    if kEliteEight:
+        # DEBUG : Elite Eight : regenerate bracket
+        ee = eliteEightBonus(mc, owners)
+        ee_winner_str = "|".join([w for w in ee])
+        print(",".join([ee_winner_str, str(p)] + scenario_winners))
 
-    print("OWNER".ljust(10), "SUM OF 2".ljust(10), "BEST".ljust(10), "$$$".ljust(10))
+        for o in ee:
+            elite_eight_shares[o][0] += 1.0 / len(ee)
+            elite_eight_shares[o][1] += p / len(ee)
+        #print()
+
+    if kExhaustive:
+        mc_winners = [str(mc.slots[i-1].winner) for i in sim_gids]
+        sum_2 = sumOf2Bonus(mc, owners)
+        sum_2_winners = "|".join(["%s: %s+%s" % (o, v[0], v[1]) for o, v in sum_2.items()])
+        single = singleBonus(mc, owners)
+        single_winners = "|".join(["%s: %s" % (o, v) for o, v in single.items()])
+        print(",".join([sum_2_winners, single_winners, str(p)] + mc_winners))
+
+    if kMonteCarlo:
+        print("OWNER".ljust(10), "SUM OF 2".ljust(10), "BEST".ljust(10), "$$$".ljust(10))
+        for owner in owners.values():
+            sum_2 = sims[0][owner.name]
+            single = sims[1][owner.name]
+            yuge = (sum_2 * 100 + single * 20) / sims_per_scenario
+            print(owner.name.ljust(10), str(round(sum_2, 2)).ljust(10), str(round(single, 2)).ljust(10), str(round(yuge, 2)).ljust(10))
+        print()
+
+if kEliteEight:
+    print("Elite Eight Bonus Scenarios")
+    print("OWNER".ljust(10), "Total".ljust(10), "Weighted".ljust(10))
     for owner in owners.values():
-        sum_2 = sims[0][owner.name]
-        single = sims[1][owner.name]
-        yuge = (sum_2 * 100 + single * 20) / sims_per_scenario
-        print(owner.name.ljust(10), str(round(sum_2, 2)).ljust(10), str(round(single, 2)).ljust(10), str(round(yuge, 2)).ljust(10))
+        w0 = elite_eight_shares[owner.name][0]
+        w1 = elite_eight_shares[owner.name][1] * 16
+        print(owner.name.ljust(10), str(round(w0, 2)).ljust(10), str(round(w1, 2)).ljust(10))
     print()
-
-#print("Elite Eight Bonus Scenarios")
-#print("OWNER".ljust(10), "Total".ljust(10), "Weighted".ljust(10))
-#for owner in owners.values():
-#    w0 = elite_eight_shares[owner.name][0]
-#    w1 = elite_eight_shares[owner.name][1] * 16
-#    print(owner.name.ljust(10), str(round(w0, 2)).ljust(10), str(round(w1, 2)).ljust(10))
-#print()
