@@ -1,0 +1,352 @@
+ID: 1
+Winner:       1 Houston
+Runner Up:    3 Baylor
+Final Four:   1 Connecticut, 3 Creighton
+Elite Eight:  2 Iowa State, 1 North Carolina, 2 Marquette, 8 Utah State
+Purdue Depth: Round of 32
+UVA Depth:    Sweet 16
+Chalk Score:  119.81
+538 Score:    57.88
+HEAT Score:   1.0185
+
+ID: 2
+Winner:       1 Connecticut
+Runner Up:    3 Creighton
+Final Four:   5 Saint Mary's, 3 Kentucky
+Elite Eight:  3 Illinois, 3 Baylor, 1 Houston, 5 Gonzaga
+Purdue Depth: Round of 32
+UVA Depth:    First Four
+Chalk Score:  117.18
+538 Score:    59.76
+HEAT Score:   0.66
+
+ID: 3
+Winner:       4 Auburn
+Runner Up:    1 Purdue
+Final Four:   3 Baylor, 1 Houston
+Elite Eight:  2 Iowa State, 4 Alabama, 7 Florida, 2 Tennessee
+Purdue Depth: Runner Up
+UVA Depth:    Round of 32
+Chalk Score:  113.6
+538 Score:    56.19
+HEAT Score:   1.1272
+
+ID: 4
+Winner:       2 Arizona
+Runner Up:    1 Purdue
+Final Four:   2 Iowa State, 2 Marquette
+Elite Eight:  1 Connecticut, 1 North Carolina, 5 Wisconsin, 7 Texas
+Purdue Depth: Runner Up
+UVA Depth:    Round of 64
+Chalk Score:  121.13
+538 Score:    66.0
+HEAT Score:   2.2688
+
+ID: 5
+Winner:       1 Purdue
+Runner Up:    3 Illinois
+Final Four:   4 Alabama, 4 Duke
+Elite Eight:  5 San Diego State, 3 Baylor, 3 Kentucky, 3 Creighton
+Purdue Depth: Winner
+UVA Depth:    First Four
+Chalk Score:  111.88
+538 Score:    56.14
+HEAT Score:   1.1998
+
+ID: 6
+Winner:       1 Connecticut
+Runner Up:    1 Houston
+Final Four:   2 Arizona, 1 Purdue
+Elite Eight:  3 Illinois, 8 Mississippi State, 10a Colorado, 2 Tennessee
+Purdue Depth: Final 4
+UVA Depth:    Round of 64
+Chalk Score:  125.11
+538 Score:    68.38
+HEAT Score:   2.3485
+
+ID: 7
+Winner:       1 Connecticut
+Runner Up:    2 Tennessee
+Final Four:   3 Baylor, 4 Duke
+Elite Eight:  3 Illinois, 4 Alabama, 2 Marquette, 9 TCU
+Purdue Depth: Round of 64
+UVA Depth:    First Four
+Chalk Score:  120.93
+538 Score:    61.72
+HEAT Score:   2.9222
+
+ID: 8
+Winner:       3 Illinois
+Runner Up:    2 Tennessee
+Final Four:   4 Alabama, 1 Houston
+Elite Eight:  1 Connecticut, 2 Arizona, 2 Marquette, 1 Purdue
+Purdue Depth: Elite 8
+UVA Depth:    First Four
+Chalk Score:  112.97
+538 Score:    56.31
+HEAT Score:   1.0507
+
+ID: 9
+Winner:       4 Auburn
+Runner Up:    4 Kansas
+Final Four:   1 North Carolina, 3 Kentucky
+Elite Eight:  2 Iowa State, 2 Arizona, 5 Wisconsin, 2 Tennessee
+Purdue Depth: Round of 32
+UVA Depth:    Round of 64
+Chalk Score:  108.98
+538 Score:    52.83
+HEAT Score:   2.2623
+
+ID: 10
+Winner:       1 Purdue
+Runner Up:    1 North Carolina
+Final Four:   4 Auburn, 4 Duke
+Elite Eight:  2 Iowa State, 11 New Mexico, 2 Marquette, 11 Oregon
+Purdue Depth: Winner
+UVA Depth:    First Four
+Chalk Score:  114.19
+538 Score:    58.48
+HEAT Score:   1.2822
+
+ID: 11
+Winner:       4 Kansas
+Runner Up:    1 Connecticut
+Final Four:   1 North Carolina, 1 Houston
+Elite Eight:  2 Iowa State, 3 Baylor, 3 Kentucky, 3 Creighton
+Purdue Depth: Round of 32
+UVA Depth:    First Four
+Chalk Score:  118.96
+538 Score:    60.62
+HEAT Score:   2.8793
+
+ID: 12
+Winner:       1 Connecticut
+Runner Up:    4 Kansas
+Final Four:   11 New Mexico, 1 Houston
+Elite Eight:  2 Iowa State, 1 North Carolina, 2 Marquette, 3 Creighton
+Purdue Depth: Sweet 16
+UVA Depth:    Round of 64
+Chalk Score:  119.58
+538 Score:    62.46
+HEAT Score:   2.2755
+
+ID: 13
+Winner:       9 Texas A&M
+Runner Up:    1 Connecticut
+Final Four:   2 Arizona, 5 Gonzaga
+Elite Eight:  3 Illinois, 9 Michigan State, 7 Florida, 7 Texas
+Purdue Depth: Sweet 16
+UVA Depth:    First Four
+Chalk Score:  99.18
+538 Score:    54.55
+HEAT Score:   2.9266
+
+ID: 14
+Winner:       1 Purdue
+Runner Up:    3 Baylor
+Final Four:   3 Illinois, 6 Texas Tech
+Elite Eight:  4 Auburn, 4 Alabama, 5 Wisconsin, 2 Tennessee
+Purdue Depth: Winner
+UVA Depth:    First Four
+Chalk Score:  114.14
+538 Score:    56.28
+HEAT Score:   1.069
+
+ID: 15
+Winner:       4 Kansas
+Runner Up:    4 Alabama
+Final Four:   2 Iowa State, 10b Boise State
+Elite Eight:  1 Connecticut, 2 Arizona, 5 Wisconsin, 2 Tennessee
+Purdue Depth: Sweet 16
+UVA Depth:    Round of 64
+Chalk Score:  102.23
+538 Score:    50.83
+HEAT Score:   1.2838
+
+ID: 16
+Winner:       1 Purdue
+Runner Up:    4 Auburn
+Final Four:   2 Arizona, 3 Kentucky
+Elite Eight:  6 Brigham Young, 12 Grand Canyon, 1 Houston, 2 Tennessee
+Purdue Depth: Winner
+UVA Depth:    Round of 64
+Chalk Score:  110.66
+538 Score:    56.4
+HEAT Score:   2.6204
+
+ID: 17
+Winner:       1 Purdue
+Runner Up:    2 Arizona
+Final Four:   1 Connecticut, 5 Wisconsin
+Elite Eight:  3 Illinois, 1 North Carolina, 3 Kentucky, 3 Creighton
+Purdue Depth: Winner
+UVA Depth:    Round of 32
+Chalk Score:  122.58
+538 Score:    66.57
+HEAT Score:   2.1958
+
+ID: 18
+Winner:       5 Wisconsin
+Runner Up:    9 Michigan State
+Final Four:   2 Iowa State, 1 Purdue
+Elite Eight:  4 Auburn, 2 Arizona, 3 Kentucky, 2 Tennessee
+Purdue Depth: Final 4
+UVA Depth:    First Four
+Chalk Score:  98.93
+538 Score:    52.56
+HEAT Score:   2.5786
+
+ID: 19
+Winner:       1 Houston
+Runner Up:    1 North Carolina
+Final Four:   3 Illinois, 2 Tennessee
+Elite Eight:  1 Connecticut, 2 Arizona, 3 Kentucky, 1 Purdue
+Purdue Depth: Elite 8
+UVA Depth:    First Four
+Chalk Score:  127.25
+538 Score:    63.86
+HEAT Score:   1.2596
+
+ID: 20
+Winner:       2 Arizona
+Runner Up:    1 Purdue
+Final Four:   1 Connecticut, 3 Kentucky
+Elite Eight:  3 Illinois, 4 Alabama, 1 Houston, 2 Tennessee
+Purdue Depth: Runner Up
+UVA Depth:    First Four
+Chalk Score:  122.22
+538 Score:    68.5
+HEAT Score:   1.1667
+
+ID: 21
+Winner:       1 Connecticut
+Runner Up:    2 Marquette
+Final Four:   3 Baylor, 1 Purdue
+Elite Eight:  6 Brigham Young, 5 Saint Mary's, 9 Texas A&M, 7 Texas
+Purdue Depth: Final 4
+UVA Depth:    First Four
+Chalk Score:  117.31
+538 Score:    59.48
+HEAT Score:   2.0784
+
+ID: 22
+Winner:       2 Tennessee
+Runner Up:    1 Connecticut
+Final Four:   3 Baylor, 3 Kentucky
+Elite Eight:  2 Iowa State, 4 Alabama, 1 Houston, 4 Kansas
+Purdue Depth: Sweet 16
+UVA Depth:    First Four
+Chalk Score:  120.95
+538 Score:    61.48
+HEAT Score:   2.7242
+
+ID: 23
+Winner:       5 Gonzaga
+Runner Up:    2 Arizona
+Final Four:   3 Illinois, 3 Kentucky
+Elite Eight:  4 Auburn, 1 North Carolina, 1 Houston, 2 Tennessee
+Purdue Depth: Sweet 16
+UVA Depth:    First Four
+Chalk Score:  109.03
+538 Score:    58.73
+HEAT Score:   1.2384
+
+ID: 24
+Winner:       3 Kentucky
+Runner Up:    3 Baylor
+Final Four:   3 Illinois, 4 Kansas
+Elite Eight:  8 Florida Atlantic, 4 Alabama, 4 Duke, 3 Creighton
+Purdue Depth: Sweet 16
+UVA Depth:    Round of 64
+Chalk Score:  105.58
+538 Score:    50.44
+HEAT Score:   2.2757
+
+ID: 25
+Winner:       2 Iowa State
+Runner Up:    2 Tennessee
+Final Four:   1 North Carolina, 3 Kentucky
+Elite Eight:  1 Connecticut, 2 Arizona, 4 Duke, 1 Purdue
+Purdue Depth: Elite 8
+UVA Depth:    First Four
+Chalk Score:  114.26
+538 Score:    57.98
+HEAT Score:   1.264
+
+ID: 26
+Winner:       1 Houston
+Runner Up:    7 Dayton
+Final Four:   2 Iowa State, 1 Purdue
+Elite Eight:  9 Northwestern, 1 North Carolina, 2 Marquette, 3 Creighton
+Purdue Depth: Final 4
+UVA Depth:    Round of 64
+Chalk Score:  118.44
+538 Score:    58.14
+HEAT Score:   2.8662
+
+ID: 27
+Winner:       1 Purdue
+Runner Up:    2 Arizona
+Final Four:   1 Connecticut, 3 Kentucky
+Elite Eight:  6 Brigham Young, 1 North Carolina, 1 Houston, 2 Tennessee
+Purdue Depth: Winner
+UVA Depth:    First Four
+Chalk Score:  119.16
+538 Score:    64.28
+HEAT Score:   2.0954
+
+ID: 28
+Winner:       4 Auburn
+Runner Up:    3 Creighton
+Final Four:   3 Baylor, 4 Duke
+Elite Eight:  3 Illinois, 1 North Carolina, 3 Kentucky, 1 Purdue
+Purdue Depth: Elite 8
+UVA Depth:    Round of 64
+Chalk Score:  109.69
+538 Score:    55.67
+HEAT Score:   2.9158
+
+ID: 29
+Winner:       1 North Carolina
+Runner Up:    4 Duke
+Final Four:   1 Connecticut, 1 Purdue
+Elite Eight:  6 Brigham Young, 2 Arizona, 10a Colorado, 7 Texas
+Purdue Depth: Final 4
+UVA Depth:    First Four
+Chalk Score:  112.1
+538 Score:    55.58
+HEAT Score:   1.2725
+
+ID: 30
+Winner:       3 Baylor
+Runner Up:    5 Wisconsin
+Final Four:   1 Connecticut, 1 Purdue
+Elite Eight:  2 Iowa State, 1 North Carolina, 3 Kentucky, 2 Tennessee
+Purdue Depth: Final 4
+UVA Depth:    Round of 64
+Chalk Score:  114.05
+538 Score:    57.71
+HEAT Score:   0.8532
+
+ID: 31
+Winner:       1 Houston
+Runner Up:    4 Auburn
+Final Four:   2 Arizona, 1 Purdue
+Elite Eight:  3 Illinois, 4 Alabama, 3 Kentucky, 3 Creighton
+Purdue Depth: Final 4
+UVA Depth:    First Four
+Chalk Score:  120.51
+538 Score:    62.26
+HEAT Score:   2.1919
+
+ID: 32
+Winner:       2 Iowa State
+Runner Up:    3 Kentucky
+Final Four:   3 Baylor, 3 Creighton
+Elite Eight:  4 Auburn, 4 Alabama, 1 Houston, 1 Purdue
+Purdue Depth: Elite 8
+UVA Depth:    Round of 64
+Chalk Score:  110.57
+538 Score:    53.87
+HEAT Score:   2.763
+

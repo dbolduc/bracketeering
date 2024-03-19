@@ -1,0 +1,68 @@
+23
+1,Gonzaga
+2,Arizona
+3,Gonzaga
+4,Illinois
+5,Arizona
+6,Kentucky
+7,Gonzaga
+8,Auburn
+9,Illinois
+10,North Carolina
+11,Arizona
+12,Houston
+13,Kentucky
+14,Gonzaga
+15,Tennessee
+16,Connecticut
+17,Auburn
+18,Illinois
+19,Iowa State
+20,North Carolina
+21,Saint Mary's
+22,Clemson
+23,Arizona
+24,Houston
+25,Vermont
+26,Kentucky
+27,Marquette
+28,Purdue
+29,Gonzaga
+30,Creighton
+31,Tennessee
+32,Connecticut
+33,Florida Atlantic
+34,San Diego State
+35,Auburn
+36,Duquesne
+37,Illinois
+38,Washington State
+39,Iowa State
+40,North Carolina
+41,Michigan State
+42,Saint Mary's
+43,Alabama
+44,Clemson
+45,Baylor
+46,Nevada
+47,Arizona
+48,Houston
+49,Texas A&M
+50,Wisconsin
+51,Vermont
+52,Texas Tech
+53,Kentucky
+54,Florida
+55,Marquette
+56,Purdue
+57,TCU
+58,Gonzaga
+59,Kansas
+60,Oregon
+61,Creighton
+62,Texas
+63,Tennessee
+81,Howard
+109,Boise State
+113,Montana State
+125,Colorado State

@@ -1,0 +1,68 @@
+7
+1,Connecticut
+2,Connecticut
+3,Tennessee
+4,Connecticut
+5,Baylor
+6,Duke
+7,Tennessee
+8,Connecticut
+9,Illinois
+10,Alabama
+11,Baylor
+12,Duke
+13,Marquette
+14,TCU
+15,Tennessee
+16,Connecticut
+17,Auburn
+18,Illinois
+19,Drake
+20,North Carolina
+21,Alabama
+22,Baylor
+23,Nevada
+24,Houston
+25,Duke
+26,Kentucky
+27,Marquette
+28,TCU
+29,Kansas
+30,Creighton
+31,Tennessee
+32,Connecticut
+33,Florida Atlantic
+34,UAB
+35,Auburn
+36,Brigham Young
+37,Illinois
+38,Drake
+39,Iowa State
+40,North Carolina
+41,Michigan State
+42,Saint Mary's
+43,Alabama
+44,Clemson
+45,Baylor
+46,Nevada
+47,Arizona
+48,Houston
+49,Texas A&M
+50,Wisconsin
+51,Duke
+52,Texas Tech
+53,Kentucky
+54,Colorado
+55,Marquette
+56,Grambling State
+57,TCU
+58,Gonzaga
+59,Kansas
+60,South Carolina
+61,Creighton
+62,Texas
+63,Tennessee
+81,Howard
+109,Colorado
+113,Grambling State
+125,Colorado State

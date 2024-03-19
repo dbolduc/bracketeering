@@ -1,0 +1,70 @@
+# Overall seed is implied by the ordering. This file was handwritten.
+# Source: https://www.cbssports.com/college-basketball/news/march-madness-2024-committee-reveals-official-ncaa-tournament-bracket-seed-list-from-1-68/
+Connecticut
+Houston
+Purdue
+North Carolina
+Tennessee
+Arizona
+Marquette
+Iowa State
+Baylor
+Creighton
+Kentucky
+Illinois
+Duke
+Kansas
+Auburn
+Alabama
+Brigham Young
+San Diego State
+Wisconsin
+Saint Mary's
+Gonzaga
+Clemson
+Texas Tech
+South Carolina
+Florida
+Washington State
+Texas
+Dayton
+Nebraska
+Utah State
+Florida Atlantic
+Mississippi State
+Michigan State
+Texas A&M
+TCU
+Northwestern
+Nevada
+Boise State
+Colorado
+Drake
+Virginia
+New Mexico
+Oregon
+Colorado State
+North Carolina State
+Duquesne
+Grand Canyon
+James Madison
+McNeese State
+UAB
+Vermont
+Yale
+Samford
+Charleston
+Oakland
+Akron
+Morehead State
+Colgate
+Long Beach State
+Western Kentucky
+South Dakota State
+St. Peter's
+Longwood
+Stetson
+Montana State
+Grambling State
+Howard
+Wagner

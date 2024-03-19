@@ -1,0 +1,68 @@
+26
+1,Houston
+2,Dayton
+3,Houston
+4,Iowa State
+5,Dayton
+6,Houston
+7,Purdue
+8,Northwestern
+9,Iowa State
+10,North Carolina
+11,Dayton
+12,Houston
+13,Marquette
+14,Purdue
+15,Creighton
+16,Northwestern
+17,San Diego State
+18,Illinois
+19,Iowa State
+20,North Carolina
+21,Saint Mary's
+22,Baylor
+23,Dayton
+24,Houston
+25,Duke
+26,Kentucky
+27,Marquette
+28,Purdue
+29,Gonzaga
+30,Creighton
+31,Tennessee
+32,Connecticut
+33,Northwestern
+34,San Diego State
+35,Auburn
+36,Brigham Young
+37,Illinois
+38,Drake
+39,Iowa State
+40,North Carolina
+41,Michigan State
+42,Saint Mary's
+43,Charleston
+44,Clemson
+45,Baylor
+46,Dayton
+47,Arizona
+48,Houston
+49,Nebraska
+50,Wisconsin
+51,Duke
+52,North Carolina State
+53,Kentucky
+54,Florida
+55,Marquette
+56,Purdue
+57,Utah State
+58,Gonzaga
+59,Kansas
+60,South Carolina
+61,Creighton
+62,Texas
+63,Tennessee
+81,Wagner
+109,Boise State
+113,Grambling State
+125,Virginia

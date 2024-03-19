@@ -1,0 +1,68 @@
+16
+1,Purdue
+2,Auburn
+3,Purdue
+4,Auburn
+5,Arizona
+6,Kentucky
+7,Purdue
+8,Auburn
+9,Brigham Young
+10,Grand Canyon
+11,Arizona
+12,Houston
+13,Kentucky
+14,Purdue
+15,Tennessee
+16,Florida Atlantic
+17,Auburn
+18,Brigham Young
+19,Washington State
+20,Michigan State
+21,Grand Canyon
+22,Baylor
+23,Arizona
+24,Houston
+25,Duke
+26,Kentucky
+27,Boise State
+28,Purdue
+29,McNeese State
+30,Creighton
+31,Tennessee
+32,Connecticut
+33,Florida Atlantic
+34,San Diego State
+35,Auburn
+36,Brigham Young
+37,Illinois
+38,Washington State
+39,Iowa State
+40,North Carolina
+41,Michigan State
+42,Grand Canyon
+43,Charleston
+44,New Mexico
+45,Baylor
+46,Dayton
+47,Arizona
+48,Houston
+49,Texas A&M
+50,Wisconsin
+51,Duke
+52,Texas Tech
+53,Kentucky
+54,Boise State
+55,Marquette
+56,Purdue
+57,TCU
+58,McNeese State
+59,Kansas
+60,Oregon
+61,Creighton
+62,Texas
+63,Tennessee
+81,Wagner
+109,Boise State
+113,Grambling State
+125,Virginia

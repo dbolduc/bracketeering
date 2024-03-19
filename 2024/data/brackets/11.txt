@@ -1,0 +1,68 @@
+11
+1,Kansas
+2,Connecticut
+3,Kansas
+4,Connecticut
+5,North Carolina
+6,Houston
+7,Kansas
+8,Connecticut
+9,Iowa State
+10,North Carolina
+11,Baylor
+12,Houston
+13,Kentucky
+14,Kansas
+15,Creighton
+16,Connecticut
+17,San Diego State
+18,Illinois
+19,Iowa State
+20,North Carolina
+21,Alabama
+22,Baylor
+23,Dayton
+24,Houston
+25,Wisconsin
+26,Kentucky
+27,Florida
+28,TCU
+29,Kansas
+30,Creighton
+31,Tennessee
+32,Connecticut
+33,Florida Atlantic
+34,San Diego State
+35,Auburn
+36,Brigham Young
+37,Illinois
+38,Drake
+39,Iowa State
+40,North Carolina
+41,Michigan State
+42,Grand Canyon
+43,Alabama
+44,Clemson
+45,Baylor
+46,Dayton
+47,Arizona
+48,Houston
+49,Texas A&M
+50,Wisconsin
+51,Duke
+52,North Carolina State
+53,Kentucky
+54,Florida
+55,Marquette
+56,Purdue
+57,TCU
+58,Gonzaga
+59,Kansas
+60,South Carolina
+61,Creighton
+62,Texas
+63,Tennessee
+81,Wagner
+109,Colorado
+113,Grambling State
+125,Colorado State

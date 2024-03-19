@@ -1,0 +1,68 @@
+15
+1,Kansas
+2,Alabama
+3,Kansas
+4,Iowa State
+5,Alabama
+6,Boise State
+7,Kansas
+8,Connecticut
+9,Iowa State
+10,Alabama
+11,Arizona
+12,Wisconsin
+13,Boise State
+14,Kansas
+15,Tennessee
+16,Connecticut
+17,Auburn
+18,Brigham Young
+19,Iowa State
+20,North Carolina
+21,Alabama
+22,Clemson
+23,Arizona
+24,Nebraska
+25,Wisconsin
+26,Kentucky
+27,Boise State
+28,Purdue
+29,Kansas
+30,Oregon
+31,Tennessee
+32,Connecticut
+33,Florida Atlantic
+34,San Diego State
+35,Auburn
+36,Brigham Young
+37,Illinois
+38,Drake
+39,Iowa State
+40,North Carolina
+41,Michigan State
+42,Grand Canyon
+43,Alabama
+44,Clemson
+45,Baylor
+46,Nevada
+47,Arizona
+48,Houston
+49,Nebraska
+50,Wisconsin
+51,Duke
+52,North Carolina State
+53,Kentucky
+54,Boise State
+55,Marquette
+56,Purdue
+57,TCU
+58,Gonzaga
+59,Kansas
+60,Oregon
+61,Akron
+62,Texas
+63,Tennessee
+81,Wagner
+109,Boise State
+113,Montana State
+125,Virginia

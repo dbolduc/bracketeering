@@ -1,0 +1,68 @@
+30
+1,Baylor
+2,Baylor
+3,Wisconsin
+4,Connecticut
+5,Baylor
+6,Wisconsin
+7,Purdue
+8,Connecticut
+9,Iowa State
+10,North Carolina
+11,Baylor
+12,Wisconsin
+13,Kentucky
+14,Purdue
+15,Tennessee
+16,Connecticut
+17,San Diego State
+18,Brigham Young
+19,Iowa State
+20,North Carolina
+21,Alabama
+22,Baylor
+23,Dayton
+24,Houston
+25,Wisconsin
+26,Kentucky
+27,Marquette
+28,Purdue
+29,Gonzaga
+30,Oregon
+31,Tennessee
+32,Connecticut
+33,Northwestern
+34,San Diego State
+35,Auburn
+36,Brigham Young
+37,Illinois
+38,Drake
+39,Iowa State
+40,North Carolina
+41,Mississippi State
+42,Grand Canyon
+43,Alabama
+44,Clemson
+45,Baylor
+46,Dayton
+47,Long Beach State
+48,Houston
+49,Texas A&M
+50,Wisconsin
+51,Duke
+52,Texas Tech
+53,Kentucky
+54,Florida
+55,Marquette
+56,Purdue
+57,Utah State
+58,Gonzaga
+59,Kansas
+60,Oregon
+61,Akron
+62,Texas
+63,Tennessee
+81,Howard
+109,Colorado
+113,Grambling State
+125,Virginia
