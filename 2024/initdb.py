@@ -516,6 +516,7 @@ if kGenerateCheatSheets:
 
 # TODO : move out, accept arguments instead of globals.
 # MonteCarlo sim to see which bracket is best
+# TODO : Add to cheat sheet as "BB Share (%)"
 def preDraftSim():
     dern_bids = {}
     for i in range(kTotalBrackets):
@@ -523,8 +524,6 @@ def preDraftSim():
     #for i in range(50000*4):
     for i in range(50000):
         mc = generateBracket(games, sorted_gids, truthPlus538Compare)
-        max_pts = 0
-        max_streak = 0
         pts_ids = [[bracketCompare(mc, b), b.bid] for b in brackets]
         pts_ids.sort(reverse=True)
         best_bid = pts_ids[0][1]
@@ -535,8 +534,8 @@ def preDraftSim():
 
 # =========================================
 # Scaffolding - pre draft
+#preDraftSim()
 exit(0)
-preDraftSim()
 # =========================================
 
 owners = loadDraft(brackets)
