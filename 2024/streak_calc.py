@@ -1,3 +1,7 @@
+# This thing calculates how many games it takes for each bracket to be unique. i.e. to have its own sequence. This is a prerequisite to winning the streak award.
+# Well, that is the intention. I haven't actually tested the code. I write code good tho.
+# TODO : Add this to the pre-draft cheat sheet.
+
 year = "2024"
 
 def loadStreak():
