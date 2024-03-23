@@ -497,7 +497,7 @@ streak_gids = loadStreak()
 # TODO : Consider unfactoring the generation into a dedicated method (for cleanliness)
 brackets = []
 kGenerateBrackets = False
-kGenerateCheatSheets = True
+kGenerateCheatSheets = False
 kBracketsPerOwner = 4
 kNumOwners = 8
 kTotalBrackets = kBracketsPerOwner * kNumOwners
@@ -521,7 +521,6 @@ def preDraftSim():
     dern_bids = {}
     for i in range(kTotalBrackets):
         dern_bids[i+1] = 0
-    #for i in range(50000*4):
     for i in range(50000):
         mc = generateBracket(games, sorted_gids, truthPlus538Compare)
         pts_ids = [[bracketCompare(mc, b), b.bid] for b in brackets]
@@ -535,7 +534,7 @@ def preDraftSim():
 # =========================================
 # Scaffolding - pre draft
 #preDraftSim()
-exit(0)
+#exit(0)
 # =========================================
 
 owners = loadDraft(brackets)
@@ -566,7 +565,8 @@ for o in owners:
     elite_eight_shares[o] = [0.0, 0.0] # [total, weighted]
 
 # Set today's winners that 538 does not know about.
-#games[8].winner = games[8].team2   # Alabama < SDSU
+games[23].winner = games[23].team2   # Dayton < Arizona
+games[29].winner = games[29].team1   # Gonzaga > Kansas
 
 # Type of sim
 kMonteCarlo = True
@@ -575,15 +575,16 @@ kExhaustive = False
 
 # A MC sim, for when there are too many possibilities to simulate them all.
 if kMonteCarlo:
-    sim_gids = [4]
+    # sim_gids = [A, B, ...] # Simulate over all possible outcomes of games A, B, etc. That is 2^N outcomes.
+    sim_gids = [19, 20] # Game 20: MSU vs. UNC
     scenarios = 1 << len(sim_gids) # 2^|G|
-    sims_per_scenario = 10000 // scenarios  
+    sims_per_scenario = 10000 // scenarios
     fixed_winners = []
 
 # An exhaustive sim over the Elite Eight games, and on. (128 possibilities).
 if kExhaustive or kEliteEight:
     sim_gids = [7,6,5,4,3,2,1]
-    sim_gids = [4,6,2,3,1]
+    sim_gids = [4,6,2,3,1] # This was the order the games happened in 2023.
     scenarios = 1 << len(sim_gids) # 2^|G|
     sims_per_scenario = 1
     fixed_winners = []
