@@ -567,6 +567,16 @@ for o in owners:
 # Set today's winners that 538 does not know about.
 games[23].winner = games[23].team2   # Dayton < Arizona
 games[29].winner = games[29].team1   # Gonzaga > Kansas
+games[20].winner = games[20].team1   # UNC > MSU
+games[19].winner = games[19].team2   # Wash. St. < ISU
+games[31].winner = games[31].team2   # Texas < Tenn
+games[30].winner = games[30].team2   # Oregon < Creighton
+games[26].winner = games[26].team1   # NC St. > Oakland
+games[18].winner = games[18].team2   # Duquesne < Illinois
+
+games[27].winner = games[27].team2   # Colorado < Marquette
+games[28].winner = games[28].team1   # Purdue > Utah St.
+games[25].winner = games[25].team2   # JMU < Duke
 
 # Type of sim
 kMonteCarlo = True
@@ -576,7 +586,7 @@ kExhaustive = False
 # A MC sim, for when there are too many possibilities to simulate them all.
 if kMonteCarlo:
     # sim_gids = [A, B, ...] # Simulate over all possible outcomes of games A, B, etc. That is 2^N outcomes.
-    sim_gids = [19, 20] # Game 20: MSU vs. UNC
+    sim_gids = [16] # UConn vs. Northwestern
     scenarios = 1 << len(sim_gids) # 2^|G|
     sims_per_scenario = 10000 // scenarios
     fixed_winners = []
